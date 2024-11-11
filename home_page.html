@@ -8,18 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Gregory Kudzin</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-            <a href="research.html">Research Publications and Presentations</a>
-            <a href="projects.html">Projects</a>
-        </nav>
-    </header>
-    <main>
-        <p>This is the Welcome Page. Use the links above to navigate to other pages.</p>
-    </main>
+    <div class="menu-container" onclick="toggleMenu()">
+        <span>Navigation</span>
+        <i class="fas fa-bars"></i>
+    </div>
+    <nav id="dropdown-menu" class="dropdown-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#research">Research Publications and Presentations</a>
+        <a href="#projects">Projects</a>
+    </nav>
+    <section id="home" class="section">
+        <h2 id="typing-text"></h2>
+    </section>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Details about me.</p>
+    </section>
+    <section id="research" class="section">
+        <h2>Research Publications and Presentations</h2>
+        <p>Details about my research and publications.</p>
+    </section>
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <p>Details about my projects.</p>
+    </section>
     <footer>
         <a href="https://www.linkedin.com/in/gregorykudzin/" target="_blank">
             <i class="fab fa-linkedin"></i>
@@ -28,5 +41,6 @@
             <i class="fab fa-github"></i>
         </a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

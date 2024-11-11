@@ -1,43 +1,81 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
-header {
+
+header h1 {
+    margin: 0;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
 }
 
-nav a {
-    color: #fff;
-    margin: 0 10px;
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+
+}
+
+.dropdown-menu a {
+    display: block;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.dropdown-menu a:hover {
+    background-color: #575757;
 }
 
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+.section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+#home {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#about, #research, #projects {
+    background: #f1f1f1;
+    color: #333;
+}
+
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f1f1f1;
+    color: #333;
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -45,15 +83,36 @@ footer {
 
 footer a {
     margin: 0 10px;
-    color: #000;
+    color: #333;
     text-decoration: none;
     font-size: 24px;
+    transition: transform 0.3s;
 }
 
 footer a:hover {
-    color: #0073b1; /* LinkedIn blue */
+    transform: scale(1.2);
 }
 
-footer a:nth-child(2):hover {
-    color: #333; /* GitHub black */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Typing effect */
+#typing-text {
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
 }
