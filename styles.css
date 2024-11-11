@@ -5,7 +5,6 @@ body {
     scroll-behavior: smooth;
 }
 
-
 .section {
     padding: 100px 20px;
     min-height: 100vh;
@@ -16,13 +15,15 @@ body {
 }
 
 #home {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: rgb(255, 255, 255);
+    background: #f1f1f1; /* Light grey background */
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px);
+    background-size: 20px 20px;
+    color: rgb(167, 30, 30);
     animation: fadeIn 2s ease-in-out;
 }
 
 #about {
-    background-color: #5e1111; /* Light grey background for About Me section */
+    background-color: #f1f1f1; /* Light grey background for About Me section */
     color: #333;
 }
 
@@ -63,6 +64,10 @@ footer a:hover {
 }
 
 /* Typing effect */
+#typing-container {
+    height: 2em; /* Set a fixed height for the container */
+}
+
 #typing-text {
     font-size: 2em;
     white-space: nowrap;

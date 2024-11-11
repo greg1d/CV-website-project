@@ -1,57 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const text = "Hello, I'm Greg, an Analytical Chemist";
+    const texts = ["Analytical Chemist", "Data Scientist", "Software Developer"];
     let index = 0;
-    const speed = 100; // typing speed in milliseconds
+    let charIndex = 0;
+    let currentText = "";
+    let isDeleting = false;
+    const speed = 50; // typing speed in milliseconds
+    const delay = 1000; // delay between typing and deleting
+    const initialDelay = 3000; // initial delay before starting the typing effect
 
     function typeWriter() {
-        if (index < text.length) {
-            document.getElementById("typing-text").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, speed);
+        if (isDeleting) {
+            if (charIndex > 0) {
+                currentText = texts[index].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeWriter, speed / 2);
+            } else {
+                isDeleting = false;
+                index = (index + 1) % texts.length;
+                setTimeout(typeWriter, speed);
+            }
+        } else {
+            if (charIndex < texts[index].length) {
+                currentText = texts[index].substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(typeWriter, speed);
+            } else {
+                isDeleting = true;
+                setTimeout(typeWriter, delay);
+            }
         }
+        document.getElementById("typing-text").innerHTML = currentText;
     }
 
-    typeWriter();
-});
-
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-let menuTimeout;
-
-function toggleMenu() {
-    const menu = document.getElementById('dropdown-menu');
-    if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-    } else {
-        menu.style.display = 'block';
-        clearTimeout(menuTimeout);
-    }
-}
-
-document.querySelector('.menu-container').addEventListener('mouseenter', () => {
-    clearTimeout(menuTimeout);
-});
-
-document.querySelector('.menu-container').addEventListener('mouseleave', () => {
-    menuTimeout = setTimeout(() => {
-        document.getElementById('dropdown-menu').style.display = 'none';
-    }, 5000);
-});
-
-document.getElementById('dropdown-menu').addEventListener('mouseenter', () => {
-    clearTimeout(menuTimeout);
-});
-
-document.getElementById('dropdown-menu').addEventListener('mouseleave', () => {
-    menuTimeout = setTimeout(() => {
-        document.getElementById('dropdown-menu').style.display = 'none';
-    }, 5000);
+    setTimeout(typeWriter, initialDelay); // Start the typewriter effect after the initial delay
 });
