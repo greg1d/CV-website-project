@@ -6,23 +6,25 @@ body {
 }
 
 
+
 header h1 {
     margin: 0;
+    color: grey;
 }
 
 .menu-icon {
     font-size: 24px;
     cursor: pointer;
+    color: grey;
 }
 
 .menu-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
+    color: rgb(33, 168, 18);
+    padding: 0px 0px;
+    border-radius: 0px;
     cursor: pointer;
     font-size: 18px;
     position: relative;
@@ -43,7 +45,7 @@ header h1 {
 
 .dropdown-menu a {
     display: block;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
     text-decoration: none;
 }
@@ -63,7 +65,7 @@ header h1 {
 
 #home {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: white;
+    color: rgb(255, 255, 255);
     animation: fadeIn 2s ease-in-out;
 }
 
