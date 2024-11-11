@@ -6,54 +6,6 @@ body {
 }
 
 
-
-header h1 {
-    margin: 0;
-    color: grey;
-}
-
-.menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-    color: grey;
-}
-
-.menu-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(33, 168, 18);
-    padding: 0px 0px;
-    border-radius: 0px;
-    cursor: pointer;
-    font-size: 18px;
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background-color: #333;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-
-}
-
-.dropdown-menu a {
-    display: block;
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-    background-color: #575757;
-}
-
 .section {
     padding: 100px 20px;
     min-height: 100vh;
@@ -69,8 +21,18 @@ header h1 {
     animation: fadeIn 2s ease-in-out;
 }
 
-#about, #research, #projects {
-    background: #f1f1f1;
+#about {
+    background-color: #5e1111; /* Light grey background for About Me section */
+    color: #333;
+}
+
+#research {
+    background-color: #e0f7fa; /* Light blue background for Research Publications and Presentations section */
+    color: #333;
+}
+
+#projects {
+    background-color: #f1f1f1; /* Light grey background for Projects section */
     color: #333;
 }
 
