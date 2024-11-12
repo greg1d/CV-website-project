@@ -61,14 +61,26 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 20px; /* Adjust margin for better responsiveness */
+    margin-bottom: 20px; 
+    /* Adjust margin for better responsiveness */
+}
+
+.python-logo {
+    width: 50px; /* Set the width of the Python logo */
+    height: 50px; /* Set the height of the Python logo */
+    position: absolute;
+    right: 92.5%; /* Center the dashed line */
+    top: 96%; /* Center the dashed line */
+    transform: translateY(-50%);
 }
 
 .timeline {
     position: relative;
     max-width: 100%; /* Ensure timeline takes full width */
     margin: 0 auto;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box; 
+    left: 30%; /* Center the dashed line */
+/* Include padding and border in element's total width and height */
 }
 
 .timeline::before {
@@ -78,7 +90,7 @@ body {
     background: #333;
     top: 200px;
     bottom: 70px;
-    left: 6.5%; /* Center the dashed line */
+    right: 92.5%; /* Center the dashed line */
     transform: translateX(-50%);
     z-index: 1; /* Ensure the line is behind the icons */
 }
@@ -103,7 +115,7 @@ body {
     height: 50%;
     border-top: 20px dashed #333; /* Draw a dashed line */
     top: -53px;
-    left: 6.5%; /* Center the dashed line */
+    right: 92.5%; /* Center the dashed line */
     transform: translateX(-50%);
     z-index: 1; /* Ensure the dashed line is behind the icons */
 }
