@@ -67,15 +67,40 @@ body {
     content: '';
     position: absolute;
     width: 4px;
-    border-top: 4px dotted #f00;
     height: 50%;
-    background: #333;
-    top: 0;
+    border-top: 20px dashed #333; /* Draw a dashed line */
+    top: -14px;
     left: 23px;
     margin-left: -1px;
     z-index: 1; /* Ensure the dashed line is behind the icons */
-
 }
+
+
+.timeline-item:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    border-top: 20px dashed #333; /* Draw a dashed line */
+    top: -200px;
+    left: 23px;
+    margin-left: -1px;
+    z-index: 1; /* Ensure the dashed line is behind the icons */
+}
+
+.timeline-item:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    border-top: 20px dashed #333; /* Draw a dashed line */
+    top: -255px;
+    left: 23px;
+    margin-left: -1px;
+    z-index: 1; /* Ensure the dashed line is behind the icons */
+}
+
+
 
 .timeline::before {
     content: '';
