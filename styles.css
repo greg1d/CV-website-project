@@ -7,7 +7,7 @@ body {
 
 .section {
     padding: 100px 20px;
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,9 +22,98 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
+.vector-image {
+    position: absolute;
+    width: 100px;
+    height: auto;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
 #about {
     background-color: #f1f1f1; /* Light grey background for About Me section */
     color: #333;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cartoon-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 20px; /* Position the image to the right */
+}
+
+.timeline {
+    position: relative;
+    max-width: 400px; /* Make the timeline smaller */
+    margin: 0 auto;
+}
+
+.timeline-item:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    border-top: 4px dotted #f00;
+    height: 50%;
+    background: #333;
+    top: 0;
+    left: 23px;
+    margin-left: -1px;
+    z-index: 1; /* Ensure the dashed line is behind the icons */
+
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #333;
+    top: 220px;
+    bottom: 70px;
+    left: 23px;
+    margin-left: 0px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px 10px; /* Reduce padding */
+    position: relative;
+}
+
+.timeline-icon {
+    width: 30px; /* Reduce icon size */
+    height: 30px; /* Reduce icon size */
+    background: #6a0dad;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    z-index: 2; /* Ensure the icons are in front of the line */
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 5px 10px; /* Reduce padding */
+    border-radius: 6px;
+    width: 200px; /* Reduce width */
 }
 
 #research {
@@ -44,6 +133,9 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
 }
 
 footer a {

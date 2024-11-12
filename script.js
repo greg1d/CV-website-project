@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let isDeleting = false;
     const speed = 50; // typing speed in milliseconds
     const delay = 1000; // delay between typing and deleting
-    const initialDelay = 3000; // initial delay before starting the typing effect
+    const initialDelay = 2000; // initial delay before starting the typing effect
 
     function typeWriter() {
         if (isDeleting) {
