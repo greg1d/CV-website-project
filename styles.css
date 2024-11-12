@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    width: 100%; /* Ensure body takes full width */
 }
 
 .section {
@@ -12,6 +13,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%; /* Ensure section takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 #home {
@@ -20,6 +23,7 @@ body {
     background-size: 20px 20px;
     color: rgb(167, 30, 30);
     animation: fadeIn 2s ease-in-out;
+    width: 100%; /* Ensure home section takes full width */
 }
 
 .vector-image {
@@ -41,76 +45,42 @@ body {
 #about {
     background-color: #f1f1f1; /* Light grey background for About Me section */
     color: #333;
+    width: 100%; /* Ensure about section takes full width */
 }
 
 .about-content {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column; /* Change to column for better responsiveness */
+    align-items: center;
     justify-content: center;
+    width: 100%; /* Ensure about-content takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .cartoon-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-left: 20px; /* Position the image to the right */
+    margin-bottom: 20px; /* Adjust margin for better responsiveness */
 }
 
 .timeline {
     position: relative;
-    max-width: 400px; /* Make the timeline smaller */
+    max-width: 100%; /* Ensure timeline takes full width */
     margin: 0 auto;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
-
-.timeline-item:nth-child(2)::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 50%;
-    border-top: 20px dashed #333; /* Draw a dashed line */
-    top: -14px;
-    left: 23px;
-    margin-left: -1px;
-    z-index: 1; /* Ensure the dashed line is behind the icons */
-}
-
-
-.timeline-item:nth-child(3)::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 50%;
-    border-top: 20px dashed #333; /* Draw a dashed line */
-    top: -200px;
-    left: 23px;
-    margin-left: -1px;
-    z-index: 1; /* Ensure the dashed line is behind the icons */
-}
-
-.timeline-item:nth-child(4)::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 50%;
-    border-top: 20px dashed #333; /* Draw a dashed line */
-    top: -255px;
-    left: 23px;
-    margin-left: -1px;
-    z-index: 1; /* Ensure the dashed line is behind the icons */
-}
-
-
 
 .timeline::before {
     content: '';
     position: absolute;
     width: 4px;
     background: #333;
-    top: 220px;
+    top: 200px;
     bottom: 70px;
-    left: 23px;
-    margin-left: 0px;
+    left: 6.5%; /* Center the dashed line */
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the line is behind the icons */
 }
 
 .timeline-item {
@@ -119,11 +89,37 @@ body {
     margin: 10px 0;
     padding: 5px 10px; /* Reduce padding */
     position: relative;
+    z-index: 2; /* Ensure the icons are in front of the line */
+    width: 100%; /* Ensure timeline-item takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-.timeline-icon {
-    width: 30px; /* Reduce icon size */
-    height: 30px; /* Reduce icon size */
+.timeline-item:nth-child(2)::before,
+.timeline-item:nth-child(3)::before,
+.timeline-item:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    border-top: 20px dashed #333; /* Draw a dashed line */
+    top: -53px;
+    left: 6.5%; /* Center the dashed line */
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the dashed line is behind the icons */
+}
+
+.timeline-item:nth-child(3)::before {
+    top: -137px;
+}
+
+.timeline-item:nth-child(4)::before {
+    top: -242px; /* Adjust the top position to move the line closer */
+}
+
+.timeline-icon,
+.timeline-image {
+    width: 30px; /* Set the size of the icons and images */
+    height: 30px; /* Set the size of the icons and images */
     background: #6a0dad;
     color: white;
     border-radius: 50%;
@@ -138,17 +134,20 @@ body {
     background: #fff;
     padding: 5px 10px; /* Reduce padding */
     border-radius: 6px;
-    width: 200px; /* Reduce width */
+    width: calc(100% - 50px); /* Adjust width to fit within the timeline */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 #research {
     background-color: #e0f7fa; /* Light blue background for Research Publications and Presentations section */
     color: #333;
+    width: 100%; /* Ensure research section takes full width */
 }
 
 #projects {
     background-color: #f1f1f1; /* Light grey background for Projects section */
     color: #333;
+    width: 100%; /* Ensure projects section takes full width */
 }
 
 footer {
