@@ -46,6 +46,7 @@ body {
     background-color: #f1f1f1; /* Light grey background for About Me section */
     color: #333;
     width: 100%; /* Ensure about section takes full width */
+    position: relative; /* Set the position to relative */
 }
 
 .about-content {
@@ -55,6 +56,7 @@ body {
     justify-content: center;
     width: 100%; /* Ensure about-content takes full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Set the position to relative */
 }
 
 .cartoon-image {
@@ -65,22 +67,77 @@ body {
     /* Adjust margin for better responsiveness */
 }
 
+
+.python-logo-container {
+    width: 70px; /* Set the width of the container */
+    height: 70px; /* Set the height of the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Round the edges of the box */
+    border: 2px solid transparent; /* Transparent border for the iridescent effect */
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #ff6ec4, #7873f5, #1fd1f9, #b8ff6c, #ff6ec4);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: foil 10s  infinite; /* Apply the iridescent animation */
+    background-size: 200% 200%;
+    margin-bottom: 20px; /* Add margin for spacing */
+    position: absolute; /* Allow positioning anywhere */
+    top: 20%; /* Example positioning */
+    left: 20%; /* Example positioning */
+    transform: translate(-50%, -50%); /* Center the container */
+}
+
+.html-logo-container {
+    width: 70px; /* Set the width of the container */
+    height: 70px; /* Set the height of the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Round the edges of the box */
+    border: 2px solid transparent; /* Transparent border for the iridescent effect */
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #ff6ec4, #7873f5, #1fd1f9, #b8ff6c, #ff6ec4);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: foil 10s  infinite; /* Apply the iridescent animation */
+    background-size: 200% 200%;
+    margin-bottom: 20px; /* Add margin for spacing */
+    position: absolute; /* Allow positioning anywhere */
+    top: 40%; /* Example positioning */
+    left: 20%; /* Example positioning */
+    transform: translate(-50%, -50%); /* Center the container */
+}
+
+
+.html-logo {
+    width: 50px; /* Set the width of the Python logo */
+    height: 50px; /* Set the height of the Python logo */
+}
+
+@keyframes foil {
+    0% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
 .python-logo {
     width: 50px; /* Set the width of the Python logo */
     height: 50px; /* Set the height of the Python logo */
-    position: absolute;
-    right: 92.5%; /* Center the dashed line */
-    top: 96%; /* Center the dashed line */
-    transform: translateY(-50%);
 }
 
 .timeline {
     position: relative;
     max-width: 100%; /* Ensure timeline takes full width */
     margin: 0 auto;
+    left: 30%;
     box-sizing: border-box; 
-    left: 30%; /* Center the dashed line */
-/* Include padding and border in element's total width and height */
+    /* Include padding and border in element's total width and height */
 }
 
 .timeline::before {
@@ -90,7 +147,7 @@ body {
     background: #333;
     top: 200px;
     bottom: 70px;
-    right: 92.5%; /* Center the dashed line */
+    left: 6.4%; /* Center the dashed line */
     transform: translateX(-50%);
     z-index: 1; /* Ensure the line is behind the icons */
 }
@@ -115,7 +172,7 @@ body {
     height: 50%;
     border-top: 20px dashed #333; /* Draw a dashed line */
     top: -53px;
-    right: 92.5%; /* Center the dashed line */
+    left: 6.4%; /* Center the dashed line */
     transform: translateX(-50%);
     z-index: 1; /* Ensure the dashed line is behind the icons */
 }
