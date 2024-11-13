@@ -14,63 +14,19 @@
             <h2 id="typing-text"></h2>
         </div>
     </section>
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <img src="path/to/cartoonized-image.jpg" alt="Cartoonized Image of Greg" class="cartoon-image">
-            <img src="python.png" alt="Python Logo" class="python-logo">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-user-graduate"></i>                    </div>
-                    <div class="timeline-content">
-                        <h3>Oldest Event</h3>
-                        <p>Short description of the oldest event.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-atom"></i>                    </div>
-                    <div class="timeline-content">
-                        <h3>Next Event</h3>
-                        <p>Short description of the next event.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-university"></i>                    </div>
-                        <div class="timeline-content">
-                        <h3>Most Recent Event</h3>
-                        <p>Short description of the most recent event.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-graduation-cap"></i>                    </div>
-                    <div class="timeline-content">
-                        <h3>Latest Achievement</h3>
-                        <p>Short description of the latest achievement.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="research" class="section">
-        <h2>Research Publications and Presentations</h2>
-        <p>Details about my research and publications.</p>
-    </section>
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <p>Details about my projects.</p>
-    </section>
-    <footer>
-        <a href="https://www.linkedin.com/in/gregorykudzin/" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/greg1d" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-    </footer>
-    <script src="script.js"></script>
+    <div id="content"></div>
+    <script>
+        function loadContent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading content:', error));
+        }
+
+        // Load the About Me section
+        loadContent('about me.html', 'content');
+    </script>
 </body>
 </html>
