@@ -15,7 +15,15 @@ body {
     justify-content: center;
     width: 100%; /* Ensure section takes full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
+    opacity: 0; /* Initially hide sections */
+    transform: translateY(50px); /* Initially move sections down */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
 }
+.section.visible {
+    opacity: 1; /* Show sections when they become visible */
+    transform: translateY(0); /* Move sections to their original position */
+}
+
 
 #home {
     background: #f1f1f1; /* Light grey background */
@@ -79,8 +87,8 @@ body {
 .html-logo-container { top: 40%; left: 20%; animation-delay: 5s; }
 
 .html-logo {
-    width: 70px; /* Set the width of the Python logo */
-    height: 70px; /* Set the height of the Python logo */
+    width: 53.2px; /* Set the width of the Python logo */
+    height: 75px; /* Set the height of the Python logo */
 }
 
 @keyframes foil {

@@ -33,4 +33,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     setTimeout(typeWriter, initialDelay); // Start the typewriter effect after the initial delay
+
+    // Function to handle section visibility on scroll
+    function handleScroll() {
+        const sections = document.querySelectorAll('.section');
+        let currentSectionIndex = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const nextSection = sections[currentSectionIndex];
+
+            if (nextSection && scrollPosition >= nextSection.offsetTop + nextSection.offsetHeight / 2) {
+                nextSection.classList.add('visible');
+                currentSectionIndex++;
+            }
+        });
+    }
+
+    handleScroll();
 });
