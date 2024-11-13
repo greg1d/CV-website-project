@@ -68,50 +68,19 @@ body {
 }
 
 
-.python-logo-container {
-    width: 70px; /* Set the width of the container */
-    height: 70px; /* Set the height of the container */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px; /* Round the edges of the box */
-    border: 2px solid transparent; /* Transparent border for the iridescent effect */
-    background-image: linear-gradient(white, white), linear-gradient(45deg, #ff6ec4, #7873f5, #1fd1f9, #b8ff6c, #ff6ec4);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    animation: foil 10s  infinite; /* Apply the iridescent animation */
-    background-size: 200% 200%;
-    margin-bottom: 20px; /* Add margin for spacing */
-    position: absolute; /* Allow positioning anywhere */
-    top: 20%; /* Example positioning */
-    left: 20%; /* Example positioning */
-    transform: translate(-50%, -50%); /* Center the container */
+.python-logo-container, .html-logo-container {
+    width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;
+    border-radius: 15px; border: 2px solid transparent; background-image: linear-gradient(white, white), linear-gradient(45deg, #ff6ec4, #7873f5, #1fd1f9, #b8ff6c, #ff6ec4);
+    background-origin: border-box; background-clip: content-box, border-box; animation: foil 10s infinite; background-size: 200% 200%;
+    margin-bottom: 20px; position: absolute; transform: translate(-50%, -50%);
 }
 
-.html-logo-container {
-    width: 70px; /* Set the width of the container */
-    height: 70px; /* Set the height of the container */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px; /* Round the edges of the box */
-    border: 2px solid transparent; /* Transparent border for the iridescent effect */
-    background-image: linear-gradient(white, white), linear-gradient(45deg, #ff6ec4, #7873f5, #1fd1f9, #b8ff6c, #ff6ec4);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    animation: foil 10s  infinite; /* Apply the iridescent animation */
-    background-size: 200% 200%;
-    margin-bottom: 20px; /* Add margin for spacing */
-    position: absolute; /* Allow positioning anywhere */
-    top: 40%; /* Example positioning */
-    left: 20%; /* Example positioning */
-    transform: translate(-50%, -50%); /* Center the container */
-}
-
+.python-logo-container { top: 20%; left: 20%; }
+.html-logo-container { top: 40%; left: 20%; animation-delay: 5s; }
 
 .html-logo {
-    width: 50px; /* Set the width of the Python logo */
-    height: 50px; /* Set the height of the Python logo */
+    width: 70px; /* Set the width of the Python logo */
+    height: 70px; /* Set the height of the Python logo */
 }
 
 @keyframes foil {
@@ -127,8 +96,8 @@ body {
 }
 
 .python-logo {
-    width: 50px; /* Set the width of the Python logo */
-    height: 50px; /* Set the height of the Python logo */
+    width: 70px; /* Set the width of the Python logo */
+    height: 70px; /* Set the height of the Python logo */
 }
 
 .timeline {
