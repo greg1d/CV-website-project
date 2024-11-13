@@ -34,21 +34,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(typeWriter, initialDelay); // Start the typewriter effect after the initial delay
 
-    // Function to handle section visibility on scroll
-    function handleScroll() {
-        const sections = document.querySelectorAll('.section');
-        let currentSectionIndex = 0;
-
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY + window.innerHeight;
-            const nextSection = sections[currentSectionIndex];
-
-            if (nextSection && scrollPosition >= nextSection.offsetTop + nextSection.offsetHeight / 2) {
-                nextSection.classList.add('visible');
-                currentSectionIndex++;
+    // Intersection Observer for section visibility
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-    }
+    }, { threshold: 0.5 });
 
-    handleScroll();
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Intersection Observer for subsection visibility
+    const subsections = document.querySelectorAll('.subsection');
+    const subObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    subsections.forEach(subsection => {
+        subObserver.observe(subsection);
+    });
 });
