@@ -49,18 +49,38 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Intersection Observer for subsection visibility
-    const subsections = document.querySelectorAll('.subsection');
-    const subObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+    // Scroll and resize event listeners
+    window.addEventListener("scroll", setScrollVar);
+    window.addEventListener("resize", setScrollVar);
 
-    subsections.forEach(subsection => {
-        subObserver.observe(subsection);
+    function setScrollVar() {
+        const htmlElement = document.documentElement;
+        const percentOfScreenHeightScrolled = htmlElement.scrollTop / htmlElement.clientHeight;
+        console.log(Math.min(percentOfScreenHeightScrolled * 100, 100));
+        htmlElement.style.setProperty(
+            "--scroll",
+            Math.min(percentOfScreenHeightScrolled * 100, 100)
+        );
+    }
+
+    setScrollVar();
+
+    // Intersection Observer for images
+    const imgObserver = new IntersectionObserver(entries => {
+        for (let i = entries.length - 1; i >= 0; i--) {
+            const entry = entries[i];
+            if (entry.isIntersecting) {
+                document.querySelectorAll("[data-img]").forEach(img => {
+                    img.classList.remove("show");
+                });
+                const img = document.querySelector(entry.target.dataset.imgToShow);
+                img?.classList.add("show");
+                break;
+            }
+        }
+    });
+
+    document.querySelectorAll("[data-img-to-show]").forEach(section => {
+        imgObserver.observe(section);
     });
 });
