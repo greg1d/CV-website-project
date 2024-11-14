@@ -51,10 +51,10 @@ body {
 }
 
 #about {
-    position: sticky;
-    top: 0;
-    translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75);
-    --background-opacity: calc(100% - 1% * min(var(--scroll), 30) * 100 / 30);
+    background-color: #f1f1f1; /* Light grey background for About Me section */
+    color: #333;
+    width: 100%; /* Ensure about section takes full width */
+    position: relative; /* Set the position to relative */
 }
 
 .about-content {
@@ -83,8 +83,8 @@ body {
     margin-bottom: 20px; position: absolute; transform: translate(-50%, -50%);
 }
 
-.python-logo-container { top: 20%; left: 20%; }
-.html-logo-container { top: 40%; left: 20%; animation-delay: 5s; }
+.python-logo-container { top: 30vh; left: calc(25% - 60.5px); } /* Centered horizontally with 5px separation */
+.html-logo-container { top: 30vh; left: calc(25% + 60.5px); animation-delay: 5s; } /* Centered horizontally with 5px separation */
 
 .html-logo {
     width: 53.2px; /* Set the width of the Python logo */
