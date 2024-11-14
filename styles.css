@@ -75,6 +75,15 @@ body {
     /* Adjust margin for better responsiveness */
 }
 
+.text-box {
+    max-width: 400px; /* Set a max width for the text box */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #fff; /* Set background color */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    flex: 1; /* Allow text box to grow and fill available space */
+}
 
 .python-logo-container, .html-logo-container {
     width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;
