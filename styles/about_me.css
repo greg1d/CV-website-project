@@ -1,0 +1,37 @@
+#about {
+    background-color: #f1f1f1; /* Light grey background for About Me section */
+    color: #333;
+    width: 100%; /* Ensure about section takes full width */
+    position: relative; /* Set the position to relative */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row; /* Change to row for side-by-side layout */
+    align-items: center; /* Align items to the center */
+    justify-content: flex-start; /* Align items to the start */
+    width: 100%; /* Ensure about-content takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Set the position to relative */
+    gap: 20px; /* Add gap between elements */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.cartoon-image {
+    width: 30%; /* Set the width to fill the first 30% of the page */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+    margin-bottom: -100%;     /* Remove margin-bottom to align with text box */
+}
+
+.text-box {
+    width: calc(100% - 30%); /* Set the width to fill from 30% to 100% */
+    margin-left: 30%;
+    padding: 20px; /* Add padding for spacing */
+    background-color: #fff; /* Set background color */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    display: flex;
+    align-items: center; /* Center content vertically */
+}

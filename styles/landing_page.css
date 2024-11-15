@@ -1,0 +1,48 @@
+#home {
+    background: #f1f1f1; /* Light grey background */
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px);
+    background-size: 20px 20px;
+    color: rgb(167, 30, 30);
+    animation: fadeIn 2s ease-in-out;
+    width: 100%; /* Ensure home section takes full width */
+    min-height: 100vh; /* Increase the height of the home section to full viewport height */
+}
+
+.vector-image {
+    position: absolute;
+    width: 100px;
+    height: auto;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+/* Typing effect */
+#typing-container {
+    height: 2em; /* Set a fixed height for the container */
+}
+
+#typing-text {
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
