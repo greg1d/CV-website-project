@@ -34,53 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(typeWriter, initialDelay); // Start the typewriter effect after the initial delay
 
-    // Intersection Observer for section visibility
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Scroll and resize event listeners
-    window.addEventListener("scroll", setScrollVar);
-    window.addEventListener("resize", setScrollVar);
-
-    function setScrollVar() {
-        const htmlElement = document.documentElement;
-        const percentOfScreenHeightScrolled = htmlElement.scrollTop / htmlElement.clientHeight;
-        console.log(Math.min(percentOfScreenHeightScrolled * 100, 100));
-        htmlElement.style.setProperty(
-            "--scroll",
-            Math.min(percentOfScreenHeightScrolled * 100, 100)
-        );
+    // Function to load content from an external HTML file
+    function loadContent(url, elementId) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => console.error('Error loading content:', error));
     }
 
-    setScrollVar();
-
-    // Intersection Observer for images
-    const imgObserver = new IntersectionObserver(entries => {
-        for (let i = entries.length - 1; i >= 0; i--) {
-            const entry = entries[i];
-            if (entry.isIntersecting) {
-                document.querySelectorAll("[data-img]").forEach(img => {
-                    img.classList.remove("show");
-                });
-                const img = document.querySelector(entry.target.dataset.imgToShow);
-                img?.classList.add("show");
-                break;
-            }
-        }
-    });
-
-    document.querySelectorAll("[data-img-to-show]").forEach(section => {
-        imgObserver.observe(section);
-    });
+    // Load the About Me section
+    loadContent('about_me.html', 'content');
 });
