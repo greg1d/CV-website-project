@@ -39,11 +39,26 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url)
             .then(response => response.text())
             .then(data => {
-                document.getElementById(elementId).innerHTML = data;
+                const contentElement = document.getElementById(elementId);
+                contentElement.innerHTML += data;
+                contentElement.querySelectorAll('.section').forEach(section => {
+                    section.classList.add('visible');
+                });
+                contentElement.scrollIntoView({ behavior: 'smooth' });
             })
             .catch(error => console.error('Error loading content:', error));
     }
 
-    // Load the About Me section
-    loadContent('about_me.html', 'content');
+    // Load the About Me section when the user scrolls to the bottom of the home section
+    const homeSection = document.getElementById('home');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadContent('about_me.html', 'content');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(homeSection);
 });
