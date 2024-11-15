@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 contentElement.querySelectorAll('.section').forEach(section => {
                     section.classList.add('visible');
                 });
-                contentElement.scrollIntoView({ behavior: 'smooth' });
             })
             .catch(error => console.error('Error loading content:', error));
     }

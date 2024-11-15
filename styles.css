@@ -32,6 +32,7 @@ body {
     color: rgb(167, 30, 30);
     animation: fadeIn 2s ease-in-out;
     width: 100%; /* Ensure home section takes full width */
+    min-height: 100vh; /* Increase the height of the home section to full viewport height */
 }
 
 .vector-image {
