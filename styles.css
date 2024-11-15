@@ -24,17 +24,6 @@ body {
     transform: translateY(0); /* Move sections to their original position */
 }
 
-.subsection {
-    opacity: 0; /* Initially hide subsections */
-    transform: translateY(50px); /* Initially move subsections down */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
-}
-
-.subsection.visible {
-    opacity: 1; /* Show subsections when they become visible */
-    transform: translateY(0); /* Move subsections to their original position */
-}
-
 
 #home {
     background: #f1f1f1; /* Light grey background */
@@ -86,6 +75,15 @@ body {
     /* Adjust margin for better responsiveness */
 }
 
+.text-box {
+    max-width: 400px; /* Set a max width for the text box */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #fff; /* Set background color */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    flex: 1; /* Allow text box to grow and fill available space */
+}
 
 .python-logo-container, .html-logo-container {
     width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;
@@ -94,8 +92,8 @@ body {
     margin-bottom: 20px; position: absolute; transform: translate(-50%, -50%);
 }
 
-.python-logo-container { top: 20%; left: 20%; }
-.html-logo-container { top: 40%; left: 20%; animation-delay: 5s; }
+.python-logo-container { top: 30vh; left: calc(25% - 60.5px); } /* Centered horizontally with 5px separation */
+.html-logo-container { top: 30vh; left: calc(25% + 60.5px); animation-delay: 5s; } /* Centered horizontally with 5px separation */
 
 .html-logo {
     width: 53.2px; /* Set the width of the Python logo */

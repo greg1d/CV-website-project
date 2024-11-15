@@ -34,33 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(typeWriter, initialDelay); // Start the typewriter effect after the initial delay
 
-    // Intersection Observer for section visibility
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+    // Function to load content from an external HTML file
+    function loadContent(url, elementId) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => console.error('Error loading content:', error));
+    }
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Intersection Observer for subsection visibility
-    const subsections = document.querySelectorAll('.subsection');
-    const subObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    subsections.forEach(subsection => {
-        subObserver.observe(subsection);
-    });
+    // Load the About Me section
+    loadContent('about_me.html', 'content');
 });
