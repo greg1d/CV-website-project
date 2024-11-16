@@ -4,9 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let charIndex = 0;
     let currentText = "";
     let isDeleting = false;
-    const speed = 50; // typing speed in milliseconds
+    const baseSpeed = 50; // base typing speed in milliseconds
     const delay = 1000; // delay between typing and deleting
     const initialDelay = 2000; // initial delay before starting the typing effect
+
+    function getRandomSpeed() {
+        return baseSpeed + Math.random() * 100; // random speed between baseSpeed and baseSpeed + 100
+    }
 
     function typeWriter() {
         const textElement = document.getElementById("typing-text");
@@ -16,16 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isDeleting) {
             if (charIndex > 0) {
                 charIndex--;
-                setTimeout(typeWriter, speed / 2);
+                setTimeout(typeWriter, baseSpeed / 0.5); // Fixed speed for deleting
             } else {
                 isDeleting = false;
                 index = (index + 1) % texts.length;
-                setTimeout(typeWriter, speed);
+                setTimeout(typeWriter, baseSpeed);
             }
         } else {
             if (charIndex < texts[index].length) {
                 charIndex++;
-                setTimeout(typeWriter, speed);
+                setTimeout(typeWriter, getRandomSpeed()); // Random speed for typing
             } else {
                 isDeleting = true;
                 setTimeout(typeWriter, delay);
