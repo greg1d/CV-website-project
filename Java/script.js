@@ -53,36 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                loadContent('about_me.html', 'content');
+                loadContent('../Pages/about_me.html', 'content');
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
 
     observer.observe(homeSection);
-
-    // Calculate and set the position of the cartoon image to the center height of the text box
-    const textBox = document.querySelector('.text-box');
-    const cartoonImage = document.querySelector('.cartoon-image');
-    if (textBox && cartoonImage) {
-        const contentHeight = textBox.scrollHeight; // Height of the content
-        const paddingTop = parseFloat(window.getComputedStyle(textBox).paddingTop);
-        const paddingBottom = parseFloat(window.getComputedStyle(textBox).paddingBottom);
-        const borderTop = parseFloat(window.getComputedStyle(textBox).borderTopWidth);
-        const borderBottom = parseFloat(window.getComputedStyle(textBox).borderBottomWidth);
-
-        const totalHeight = contentHeight + paddingTop + paddingBottom + borderTop + borderBottom;
-        const centerHeight = totalHeight / 2;
-
-        console.log('Center height of the text box:', centerHeight);
-
-        // Set the position of the cartoon image to the center height
-        cartoonImage.style.position = 'relative';
-        cartoonImage.style.top = `calc(50% - ${centerHeight}px)`;
-
-        // Print the center height of the text box on the page
-        const heightDisplay = document.createElement('div');
-        heightDisplay.textContent = `Center height of the text box: ${centerHeight}px`;
-        document.body.appendChild(heightDisplay);
-    }
 });
