@@ -59,18 +59,28 @@
     border-top-color: #c2d7d0; /* Match the background color of the text box */
 }
 
+.timeline-container {
+    display: flex;
+    justify-content: flex-end; /* Align the timeline to the right */
+    width: 100%; /* Ensure the container takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
 .timeline {
-    width: 100%; /* Ensure timeline takes full width */
+    width: 70%; /* Compress the timeline to the right 60% of the screen */
     padding: 20px; /* Add padding for spacing */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Set position to relative */
     margin-top: 20px; /* Add margin to the top for spacing */
+    margin-left: 40%; /* Push the timeline further to the right */
 }
-
 .timeline-entry {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Add margin to the bottom for spacing */
+    margin-bottom: 20px;
+    width: 100%; /* Ensure timeline entry takes full width */
+    position: relative; /* Set position to relative */
+    justify-content: flex-end; /* Align items to the right */
 }
 
 .timeline-entry:last-child {
@@ -86,13 +96,13 @@
     align-items: center;
     justify-content: center;
     color: #fff; /* Set icon color */
-    margin-right: 10px; /* Add margin to the right for spacing */
+    margin-right: 20px; /* Fixed distance between the icon and the text box */
 }
-
 .timeline-content {
-    background-color: #fff; /* Set background color for the content */
-    padding: 10px; /* Add padding for spacing */
-    border-radius: 5px; /* Add border radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
-    flex: 1; /* Allow content to grow and fill available space */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Set the width to fill 60% of the container */
+    margin-left: auto; /* Align the content to the right */
 }
