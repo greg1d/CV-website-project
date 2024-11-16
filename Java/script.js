@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const texts = ["Analytical Chemist", "Data Scientist", "Software Developer"];
+    const texts = ["an Analytical Chemist", "a Data Scientist", "a Software Developer"];
     let index = 0;
     let charIndex = 0;
     let currentText = "";
@@ -9,18 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const initialDelay = 2000; // initial delay before starting the typing effect
 
     function typeWriter() {
-        const prefixElement = document.getElementById("typing-prefix");
         const textElement = document.getElementById("typing-text");
 
-        if (texts[index].startsWith("A") || texts[index].startsWith("E") || texts[index].startsWith("I") || texts[index].startsWith("O") || texts[index].startsWith("U")) {
-            prefixElement.innerHTML = "an ";
-        } else {
-            prefixElement.innerHTML = "a ";
-        }
+        currentText = texts[index].substring(0, charIndex);
 
         if (isDeleting) {
             if (charIndex > 0) {
-                currentText = texts[index].substring(0, charIndex - 1);
                 charIndex--;
                 setTimeout(typeWriter, speed / 2);
             } else {
@@ -30,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             if (charIndex < texts[index].length) {
-                currentText = texts[index].substring(0, charIndex + 1);
                 charIndex++;
                 setTimeout(typeWriter, speed);
             } else {

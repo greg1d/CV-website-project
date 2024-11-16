@@ -34,7 +34,9 @@ body {
 #typing-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start (left) */
+    width: 50%; /* Ensure the container takes 50% of the screen width */
+    margin: 0 auto; /* Center the container */
 }
 
 #typing-prefix, #typing-text {
