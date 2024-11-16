@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.section');
     const footer = document.querySelector('footer');
 
+    if (!footer) {
+        console.error('Footer element not found');
+        return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
