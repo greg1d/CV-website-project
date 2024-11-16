@@ -9,6 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const initialDelay = 2000; // initial delay before starting the typing effect
 
     function typeWriter() {
+        const prefixElement = document.getElementById("typing-prefix");
+        const textElement = document.getElementById("typing-text");
+
+        if (texts[index].startsWith("A") || texts[index].startsWith("E") || texts[index].startsWith("I") || texts[index].startsWith("O") || texts[index].startsWith("U")) {
+            prefixElement.innerHTML = "an ";
+        } else {
+            prefixElement.innerHTML = "a ";
+        }
+
         if (isDeleting) {
             if (charIndex > 0) {
                 currentText = texts[index].substring(0, charIndex - 1);
@@ -29,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(typeWriter, delay);
             }
         }
-        document.getElementById("typing-text").innerHTML = currentText;
+        textElement.innerHTML = currentText;
     }
 
     setTimeout(typeWriter, initialDelay); // Start the typewriter effect after the initial delay
