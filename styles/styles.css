@@ -52,8 +52,9 @@ footer {
     display: flex;
     justify-content: center; /* Center the icons horizontally */
     align-items: center; /* Center the icons vertically */
-    background-color: #f1f1f1; /* Light grey background for the footer */
+    background-color: var(--footer-bg-color); /* Default to light grey nearly transparent if not set */
     position: fixed; /* Fix the footer at the bottom */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 footer a {
@@ -62,7 +63,7 @@ footer a {
     text-decoration: none;
     font-size: 24px;
     transition: transform 0.3s;
-}
+}8
 
 footer a:hover {
     transform: scale(1.2);
