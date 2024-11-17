@@ -1,5 +1,5 @@
 #about {
-    background-color: #f1f1f1; /* Light grey background for About Me section */
+    background-color: #eaf3f387; /* Updated background color for About Me section */
     color: #333;
     width: 100%; /* Ensure about section takes full width */
     position: relative; /* Set the position to relative */
@@ -25,7 +25,7 @@
 }
 
 .text-box {
-    width: calc(100% - 30%); /* Set the width to fill from 30% to 100% */
+    width: 60%; /* Set the width to fill 60% of the container */
     padding: 20px; /* Add padding for spacing */
     background-color: #c2d7d0; /* Set background color */
     border: 1px solid #ccc; /* Add border */
@@ -34,6 +34,7 @@
     align-items: center;
     position: relative; /* Set position to relative for pseudo-element */
     box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
+    margin-left: auto; /* Align the text box to the right */
 }
 
 .text-box::before {
@@ -67,13 +68,13 @@
 }
 
 .timeline {
-    width: 70%; /* Compress the timeline to the right 60% of the screen */
-    padding: 20px; /* Add padding for spacing */
+    width: 60%; /* Compress the timeline to the right 60% of the screen */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Set position to relative */
     margin-top: 20px; /* Add margin to the top for spacing */
-    margin-left: 40%; /* Push the timeline further to the right */
+    margin-left: auto; /* Align the timeline to the right */
 }
+
 .timeline-entry {
     display: flex;
     align-items: center;
@@ -98,6 +99,7 @@
     color: #fff; /* Set icon color */
     margin-right: 20px; /* Fixed distance between the icon and the text box */
 }
+
 .timeline-content {
     background-color: #fff;
     padding: 10px;
