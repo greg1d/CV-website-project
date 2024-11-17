@@ -15,14 +15,8 @@ body {
     justify-content: center;
     width: 100%; /* Ensure section takes full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
-    opacity: 0; /* Initially hide sections */
-    transform: translateY(50px); /* Initially move sections down */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
 }
-.section.visible {
-    opacity: 1; /* Show sections when they become visible */
-    transform: translateY(0); /* Move sections to their original position */
-}
+
 
 .centered-text {
     text-align: left;
