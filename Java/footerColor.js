@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 footer.style.backgroundColor = footerColor;
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.01 });
 
     sections.forEach(section => {
         observer.observe(section);
