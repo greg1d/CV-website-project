@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 const footerColor = entry.target.getAttribute('data-footer-color');
                 console.log('data-footer-color:', footerColor); // Print the value of data-footer-color
-                footer.style.backgroundColor = footerColor;
+                footer.style.background = footerColor;
             }
         });
-    }, { threshold: 0.01 });
+    }, { threshold: 0.1 });
 
     sections.forEach(section => {
         observer.observe(section);
