@@ -69,3 +69,29 @@
     from, to { border-color: transparent; }
     50% { border-color: orange; }
 }
+
+/* Dynamic menu */
+#dynamic-menu {
+    margin-top: 20px; /* Add some space above the menu */
+}
+
+#dynamic-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#dynamic-menu ul li {
+    display: block; /* Display each menu item on a separate line */
+    margin-bottom: 10px; /* Add space between menu items */
+}
+
+#dynamic-menu ul li a {
+    text-decoration: none;
+    color: rgb(52, 78, 65);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+#dynamic-menu ul li a:hover {
+    color: rgb(30, 50, 40); /* Darker color on hover */
+}

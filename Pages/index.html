@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-        </ul>
-    </nav>
     <section id="home" class="section visible" data-footer-color="linear-gradient(to top, rgb(218, 215, 205, 1), rgb(218, 215, 205, 0.5))">
         <h2 class="centered-text">Hello, I'm Greg. I'm</h2>
         <div id="typing-container">
             <h2><span id="typing-text"></span></h2>
         </div>
+        <nav id="dynamic-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+            </ul>
+        </nav>
     </section>
     <section id="about" class="section" data-footer-color="linear-gradient(to top, rgba(163, 177, 138, 1), rgba(163, 177, 138, 0.5))">
         <h2>About Me</h2>
@@ -43,5 +43,7 @@
     <script src="../Java/script.js"></script>
     <script src="../Java/footerColor.js"></script>
     <script src="../Java/loadTimeline.js"></script>
+    <script src="../Java/smoothScroll.js"></script>
+
 </body>
 </html>
