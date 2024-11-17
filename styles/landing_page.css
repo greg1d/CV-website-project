@@ -6,6 +6,10 @@
     animation: fadeIn 2s ease-in-out;
     width: 100%; /* Ensure home section takes full width */
     min-height: 100vh; /* Increase the height of the home section to full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 .vector-image {
@@ -31,10 +35,23 @@
     align-items: flex-start; /* Align items to the start (left) */
     width: 100%; /* Ensure the container takes full width */
     margin: 0 auto; /* Center the container */
+    height: 100px; /* Fixed height for the container */
+    position: relative; /* Position relative for centering */
 }
+
+.centered-text {
+    margin-top: 10px; /* Move the text down slightly */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Ensure the text container takes full width */
+    margin: 0 auto; /* Center the text container */
+    white-space: normal; /* Allow text to wrap */
+    position: relative; /* Position relative for centering */
+}
+
 #typing-prefix, #typing-text {
     display: inline;
 }
+
 #typing-text {
     font-size: 2em;
     white-space: normal;
