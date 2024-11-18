@@ -135,7 +135,7 @@ def plot_data(df):
     ax.plot(x_smooth, sum_of_all_code_smooth, label="Sum of all code", color='black', linewidth=3)
 
     # Modify the title to be larger and more specific
-    ax.text(-0.05, 1.1, "Coding Progress for the Twins Project", transform=ax.transAxes,
+    ax.text(-0.05, 1.1, "Coding Progress for the Website", transform=ax.transAxes,
             fontsize=18, weight='bold', color='#757575', va='top', ha='left')
         
     # Modify the y-axis label with increased size and specific color
