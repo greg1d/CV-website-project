@@ -89,14 +89,15 @@
 }
 
 .timeline-icon {
-    width: 40px;
-    height: 40px;
+    min-width: 40px; /* Fixed width for the icon */
+    min-height: 40px; /* Fixed height for the icon */
     background-color: #124943; /* Set background color for the icon */
     border-radius: 50%; /* Make the icon circular */
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff; /* Set icon color */
+    margin-right: 20px; /* Fixed distance between the icon and the text box */
 }
 
 .timeline-content {
@@ -107,8 +108,8 @@
     border-radius: 10px; /* Add border radius */
     display: flex;
     align-items: center;
-    margin-right: 20px; /* Increase the distance between the content and the edge of the page */
     position: relative; /* Set position to relative for pseudo-element */
     box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
     margin-left: auto; /* Align the content to the right */
+    margin-right: 20px; /* Increase the distance between the content and the edge of the page */
 }
