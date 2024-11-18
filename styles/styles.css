@@ -67,3 +67,11 @@ footer a:hover {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+#menu-link {
+    display: flex;
+    align-items: center;
+}
+
+#nav-icon4 {
+    margin-right: 16px; /* Increase the spacing as needed */
+}
