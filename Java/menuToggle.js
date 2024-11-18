@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuLink = document.getElementById('menu-link');
     const dynamicMenu = document.getElementById('dynamic-menu');
     const navIcon = document.getElementById('nav-icon4');
+    const menuOptions = dynamicMenu.querySelectorAll('a'); // Assuming menu options are links
 
     if (!menuLink || !dynamicMenu || !navIcon) {
         console.error('menuToggle.js: One or more elements not found:', { menuLink, dynamicMenu, navIcon });
@@ -34,5 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, 0); // Allow the display change to take effect
         }
+    });
+
+    // Add event listeners to menu options to close the menu when an option is selected
+    menuOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            console.log('menuToggle.js: Menu option clicked.');
+            navIcon.classList.remove('open');
+            dynamicMenu.style.maxHeight = null;
+            setTimeout(() => {
+                dynamicMenu.style.display = 'none';
+                console.log('menuToggle.js: Menu closed after option selected.');
+            }, 500); // Match the transition duration
+        });
     });
 });
