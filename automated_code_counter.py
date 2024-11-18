@@ -34,13 +34,11 @@ def run_scc():
                     exclude_dirs.append(os.path.join(base_directory, line.rstrip('/')))
     
     # Debugging statement to show which directories are included in the gitignore
-    print(f"Directories included in .gitignore: {exclude_dirs}")
     
     # Remove directories included in the gitignore
     directories_to_count = [d for d in directories_to_count if d not in exclude_dirs]
     
     # Debugging statement to show which directories are actually being counted
-    print(f"Directories being counted: {directories_to_count}")
                 
     # Full path to the scc executable
     scc_path = r"C:\Users\grego\go\bin\scc.exe"  # Replace with the actual path to scc.exe
@@ -51,10 +49,8 @@ def run_scc():
         scc_command.extend(["--exclude-dir", exclude_dir])
     scc_command.extend(directories_to_count)
 
-    print(f"Running command: {' '.join(scc_command)}")  # Debugging statement
     result = subprocess.run(scc_command, capture_output=True, text=True)
     output = result.stdout
-    print(f"scc output:\n{output}")  # Debugging statement
 
     # Extract relevant data (e.g., lines of code)
     lines_of_code = 0
@@ -106,7 +102,6 @@ def save_data(lines_of_code, language_data):
 
     # Save to Excel
     df.to_excel(output_file, index=False)
-    print([language_data["CSS"]])
 
     return df
 
@@ -170,10 +165,11 @@ def plot_data(df):
     legend = ax.legend(frameon=False, fontsize=12, loc='lower right')
     for text in legend.get_texts():
         text.set_color('#757575')
+    date = datetime.now().strftime("%Y-%m-%d")
 
     # Ensure the layout is tight and no overlaps occur
     plt.tight_layout()
-    output_image_path = os.path.join(output_folder, "coding_progress_4k.png")
+    output_image_path = os.path.join(output_folder, f"coding_progress_{date}.png")
     plt.savefig(output_image_path, format='png', dpi=400, bbox_inches='tight')
     # Show the plot
     plt.show()
