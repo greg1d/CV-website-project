@@ -29,6 +29,9 @@
       cursor: pointer;
       transition: color 0.3s ease; /* Smooth transition for color */
       z-index: 1100; /* Ensure the menu icon is above other content */
+      background: none; /* Remove background */
+      border: none; /* Remove border */
+      outline: none; /* Remove outline */
   }
   
   #nav-icon4 {
