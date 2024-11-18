@@ -34,8 +34,8 @@
   }
   
   #nav-icon4 {
-      width: 60px;
-      height: 45px;
+      width: 30px;
+      height: 22.5px;
       position: relative;
       margin: 0 auto;
       -webkit-transform: rotate(0deg);
@@ -52,7 +52,7 @@
   #nav-icon4 span {
       display: block;
       position: absolute;
-      height: 9px;
+      height: 4.5px;
       width: 100%;
       background: #d3531a;
       border-radius: 9px;
@@ -77,7 +77,7 @@
   }
   
   #nav-icon4 span:nth-child(2) {
-      top: 18px;
+      top: 9px;
       -webkit-transform-origin: left center;
       -moz-transform-origin: left center;
       -o-transform-origin: left center;
@@ -85,7 +85,7 @@
   }
   
   #nav-icon4 span:nth-child(3) {
-      top: 36px;
+      top: 18px;
       -webkit-transform-origin: left center;
       -moz-transform-origin: left center;
       -o-transform-origin: left center;
@@ -97,8 +97,8 @@
       -moz-transform: rotate(45deg);
       -o-transform: rotate(45deg);
       transform: rotate(45deg);
-      top: -3px;
-      left: 8px;
+      top: -1.5px;
+      left: 4px;
   }
   
   #nav-icon4.open span:nth-child(2) {
@@ -111,8 +111,8 @@
       -moz-transform: rotate(-45deg);
       -o-transform: rotate(-45deg);
       transform: rotate(-45deg);
-      top: 39px;
-      left: 8px;
+      top: 19.5px;
+      left: 4px;
   }
   
   #dynamic-menu {
@@ -124,8 +124,8 @@
       top: 5%; /* Position the dropdown below the menu link */
       left: 50%;
       transform: translateX(-50%);
-      background-color: black; /* Set background color to black */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #dad7cdff; /* Set background color to black */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
       width: 95%; /* Full width */
       border-radius: 5px;
       z-index: 1000;
@@ -146,18 +146,18 @@
   
   #dynamic-menu ul li a {
       text-decoration: none;
-      color: white; /* Set text color to white */
+      color: #344e41ff; /* Set text color to white */
       font-size: 1.2em;
-      transition: color 0.3s ease, transform 0.3s ease, font-weight 0.3s ease; /* Add font-weight to the transition */
+      transition: color 1s ease, transform 1s ease, font-weight 0.1s ease; /* Add font-weight to the transition */
   }
   
   #dynamic-menu ul li a i {
       margin-right: 10px; /* Add space between the icon and the text */
-      transition: transform 0.3s ease; /* Add transition for the icon */
+      transition: transform 0.5s ease; /* Add transition for the icon */
   }
   
   #dynamic-menu ul li a:hover {
-      color: rgb(200, 200, 200); /* Lighter color on hover */
+      color: #3a5a40ff; /* Lighter color on hover */
       font-weight: bold; /* Make the text bold on hover */
   }
   
