@@ -10,17 +10,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <header id="main-header">
+        <nav id="main-menu">
+            <a href="#" id="menu-link"><i class="fas fa-bars"></i> Menu</a>
+            <div id="dynamic-menu" class="hidden">
+                <ul>
+                    <li><a href="#home"><i class="fas fa-tree"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-tree"></i> About Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
     <section id="home" class="section visible" data-footer-color="linear-gradient(to top, rgb(218, 215, 205, 1), rgb(218, 215, 205, 0))">
         <h2 class="centered-text">Hello, I'm Greg. I'm</h2>
         <div id="typing-container">
             <h2><span id="typing-text"></span></h2>
         </div>
-        <nav id="dynamic-menu">
-            <ul>
-                <li><a href="#home"><i class="fas fa-tree"></i> Home</a></li>
-                <li><a href="#about"><i class="fas fa-tree"></i> About Me</a></li>
-            </ul>
-        </nav>
     </section>
     <section id="about" class="section" data-footer-color="linear-gradientlinear-gradient(to top, rgb(218, 215, 205, 1), rgb(218, 215, 205, 0.5), rgb(218, 215, 205, 0))">
         <h2>About Me</h2>
@@ -44,6 +49,7 @@
     <script src="../Java/footerColor.js"></script>
     <script src="../Java/loadTimeline.js"></script>
     <script src="../Java/smoothScroll.js"></script>
+    <script src="../Java/menuToggle.js"></script>
 
 </body>
 </html>

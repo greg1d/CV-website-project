@@ -71,15 +71,40 @@
     50% { border-color: rgb(218, 215, 205); }
 }
 
+/* Main menu */
+#main-menu {
+    display: flex;
+    align-items: center;
+}
+
+#menu-link {
+    text-decoration: none;
+    color: rgb(52, 78, 65);
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
 #dynamic-menu {
-    margin-top: 70px; /* Add more space above the menu to move it down */
+    display: none; /* Initially hide the menu */
+    max-height: 0; /* Initially hide the menu */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out; /* Smooth transition for dropdown */
+    position: absolute;
+    top: 40px; /* Position the dropdown below the menu link */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black; /* Set background color to black */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
 }
 
 #dynamic-menu ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
-
 #dynamic-menu ul li {
     display: block; /* Display each menu item on a separate line */
     margin-bottom: 10px; /* Add space between menu items */
@@ -87,18 +112,18 @@
 
 #dynamic-menu ul li a {
     text-decoration: none;
-    color: rgb(52, 78, 65);
+    color: white; /* Set text color to white */
     font-size: 1.2em;
     transition: color 0.3s ease, transform 0.3s ease, font-weight 0.3s ease; /* Add font-weight to the transition */
 }
 
 #dynamic-menu ul li a i {
     margin-right: 10px; /* Add space between the icon and the text */
-    transition: transform 0.5s ease; /* Add transition for the icon */
+    transition: transform 0.3s ease; /* Add transition for the icon */
 }
 
 #dynamic-menu ul li a:hover {
-    color: rgb(30, 50, 40); /* Darker color on hover */
+    color: rgb(200, 200, 200); /* Lighter color on hover */
     font-weight: bold; /* Make the text bold on hover */
 }
 
