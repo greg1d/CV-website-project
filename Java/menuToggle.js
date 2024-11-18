@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 dynamicMenu.style.maxHeight = dynamicMenu.scrollHeight + "px";
                 console.log('menuToggle.js: Menu opened.');
+                console.log('menuToggle.js: dynamicMenu dimensions:', {
+                    width: dynamicMenu.offsetWidth,
+                    height: dynamicMenu.offsetHeight
+                });
             }, 0); // Allow the display change to take effect
         }
     });

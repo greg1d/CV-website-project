@@ -122,25 +122,26 @@
       overflow: hidden;
       transition: max-height 0.5s ease-out; /* Smooth transition for dropdown */
       position: absolute;
-      top: 40px; /* Position the dropdown below the menu link */
+      top: 5%; /* Position the dropdown below the menu link */
       left: 50%;
       transform: translateX(-50%);
       background-color: black; /* Set background color to black */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 10px;
+      width: 95%; /* Full width */
       border-radius: 5px;
       z-index: 1000;
   }
   
   #dynamic-menu ul {
       list-style: none;
-      padding: 0;
+      padding-top: 100px;
+      padding-left: 20px;
       margin: 0;
   }
   
   #dynamic-menu ul li {
       display: block; /* Display each menu item on a separate line */
-      margin-bottom: 10px; /* Add space between menu items */
+      height: 50vh;
   }
   
   #dynamic-menu ul li a {
