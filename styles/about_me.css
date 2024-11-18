@@ -73,6 +73,8 @@
     position: absolute; /* Set position to absolute */
     margin-top: 20px; /* Add margin to the top for spacing */
     margin-left: auto; /* Align the timeline to the right */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
 }
 
 .timeline-entry {
@@ -89,8 +91,10 @@
 }
 
 .timeline-icon {
-    min-width: 40px; /* Fixed width for the icon */
-    min-height: 40px; /* Fixed height for the icon */
+    width: 40px; /* Fixed width for the icon */
+    height: 40px; /* Fixed height for the icon */
+    min-width: 40px; /* Prevent the icon from compressing */
+    min-height: 40px; /* Prevent the icon from compressing */
     background-color: #124943; /* Set background color for the icon */
     border-radius: 50%; /* Make the icon circular */
     display: flex;
@@ -101,8 +105,9 @@
 }
 
 .timeline-content {
-    width: 60%; /* Set the width to fill 60% of the container */
-    padding: 20px; /* Add padding for spacing */
+    flex-grow: 1; /* Allow the content to grow */
+    flex-shrink: 1; /* Allow the content to shrink */
+    padding: 30px; /* Add padding for spacing */
     background-color: #c2d7d0; /* Set background color */
     border: 1px solid #ccc; /* Add border */
     border-radius: 10px; /* Add border radius */
@@ -112,4 +117,14 @@
     box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
     margin-left: auto; /* Align the content to the right */
     margin-right: 20px; /* Increase the distance between the content and the edge of the page */
+    min-width: 60%;
+    word-wrap: break-word; /* Ensure text wraps to the next line */
+    /* Ensure the content does not shrink below 60% of the container */
+}
+.timeline-content h3 {
+    margin-right: 20px; /* Increase the separation between the bolded part and the description */
+}
+
+.timeline-content p {
+    margin-right: 10px; /* Increase the separation between the bolded part and the description */
 }
