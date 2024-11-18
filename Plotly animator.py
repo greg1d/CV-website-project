@@ -12,10 +12,13 @@ def encode_image(image_path):
 
 def animate_pngs(directory):
     # List all PNG files in the specified directory
-    png_files = [f for f in sorted(os.listdir(directory)) if f.endswith('.png')]
+    png_files = [f for f in os.listdir(directory) if f.endswith('.png')]
+    
+    # Sort PNG files by modification time (oldest first)
+    png_files.sort(key=lambda x: os.path.getmtime(os.path.join(directory, x)))
     
     # Debugging statement to print the list of PNG files
-    print(f"PNG files in directory '{directory}': {png_files}")
+    print(f"PNG files in directory '{directory}' (sorted by modification time): {png_files}")
     
     if not png_files:
         print("No PNG files found in the directory.")
