@@ -1,26 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('menuToggle.js: DOMContentLoaded event fired.');
     const menuLink = document.getElementById('menu-link');
     const dynamicMenu = document.getElementById('dynamic-menu');
-    const menuIcon = menuLink.querySelector('i');
-    const menuText = menuLink.querySelector('span');
+    const navIcon = document.getElementById('nav-icon4');
+
+    if (!menuLink || !dynamicMenu || !navIcon) {
+        console.error('menuToggle.js: One or more elements not found:', { menuLink, dynamicMenu, navIcon });
+        return;
+    }
+
+    console.log('menuToggle.js: Elements found:', { menuLink, dynamicMenu, navIcon });
 
     menuLink.addEventListener('click', function(event) {
         event.preventDefault();
-        if (dynamicMenu.style.display === 'block') {
+        console.log('menuToggle.js: Menu link clicked.');
+        navIcon.classList.toggle('open');
+        console.log('menuToggle.js: navIcon class list:', navIcon.classList);
+
+        if (dynamicMenu.style.maxHeight) {
             dynamicMenu.style.maxHeight = null;
             setTimeout(() => {
                 dynamicMenu.style.display = 'none';
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-                menuText.textContent = ' Menu';
+                console.log('menuToggle.js: Menu closed.');
             }, 500); // Match the transition duration
         } else {
             dynamicMenu.style.display = 'block';
             setTimeout(() => {
                 dynamicMenu.style.maxHeight = dynamicMenu.scrollHeight + "px";
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
-                menuText.textContent = ' Close';
+                console.log('menuToggle.js: Menu opened.');
             }, 0); // Allow the display change to take effect
         }
     });
