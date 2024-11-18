@@ -98,5 +98,5 @@ def animate_pngs(directory):
 
 if __name__ == "__main__":
     # Specify the directory containing the PNG files
-    png_directory = r"C:\Users\grego\HTML Projects\CV website project\LOC tracking"
+    png_directory = r"C:\Users\grego\HTML Projects\CV website project\LOC tracking outputs"
     animate_pngs(png_directory)

@@ -9,7 +9,7 @@ import numpy as np
 from scipy.interpolate import make_interp_spline
 
 # Set paths
-output_folder = r"C:\Users\grego\HTML Projects\CV website project\LOC tracking"
+output_folder = r"C:\Users\grego\HTML Projects\CV website project\LOC tracking outputs"
 output_file = os.path.join(output_folder, "code_metrics.xlsx")
 font_path = r"C:\Users\grego\HTML Projects\CV website project\Formatting\Normative Pro Bold\NormativePro-Bold.ttf"
 font_prop = font_manager.FontProperties(fname=font_path)
