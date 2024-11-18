@@ -165,7 +165,7 @@ def plot_data(df):
     legend = ax.legend(frameon=False, fontsize=12, loc='lower right')
     for text in legend.get_texts():
         text.set_color('#757575')
-    date = datetime.now().strftime("%Y-%m-%d")
+    date = datetime.now().strftime("%Y-%m-%d-%H-%M")
 
     # Ensure the layout is tight and no overlaps occur
     plt.tight_layout()
