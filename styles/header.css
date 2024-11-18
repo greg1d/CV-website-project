@@ -141,7 +141,7 @@
   #dynamic-menu ul li {
       display: block; /* Display each menu item on a separate line */
       top: 100px; /* Position the dropdown below the menu link */
-      height: 50vh;
+      height: 20vh;
   }
   
   #dynamic-menu ul li a {
