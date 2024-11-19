@@ -86,18 +86,26 @@
     justify-content: flex-end; /* Align items to the right */
     transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for transform and opacity */
 }
-
 .timeline-entry:hover {
     transform: scale(1.05); /* Slightly grow the box */
     z-index: 1; /* Bring the hovered box to the front */
 }
 
-.timeline-entry:not(:hover) {
+.timeline-entry:hover ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
+.timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry {
     opacity: 0.5; /* Fade the colors of the other timeline boxes */
 }
 
-.timeline-entry:last-child {
-    margin-bottom: 0; /* Remove margin from the last entry */
+.timeline-entry:hover .timeline-entry:not(:hover) {
+    opacity: 0.5; /* Fade the colors of the other timeline boxes */
 }
 
 .timeline-icon {
@@ -130,6 +138,7 @@
     margin-right: 20px; /* Increase the distance between the content and the edge of the page */
     word-wrap: break-word; /* Ensure text wraps to the next line */
 }
+
 .timeline-content h3 {
     margin-bottom: 10px; /* Increase the separation between the header and the date */
 }
