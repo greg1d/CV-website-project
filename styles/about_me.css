@@ -35,6 +35,15 @@
     position: relative; /* Set position to relative for pseudo-element */
     box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
     margin-left: auto; /* Align the text box to the right */
+    transition: all 0.5s ease; /* Add transition for smooth movement */
+}
+
+.text-box.fixed {
+    position: fixed; /* Fix the position */
+    top: 20px; /* Adjust the top position as needed */
+    left: 20px; /* Move to the left side of the page */
+    width: 30%; /* Adjust the width as needed */
+    margin-left: 0; /* Remove the auto margin */
 }
 
 .text-box::before {
