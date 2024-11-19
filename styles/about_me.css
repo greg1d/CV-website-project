@@ -105,26 +105,31 @@
 }
 
 .timeline-content {
-    flex-grow: 1; /* Allow the content to grow */
-    flex-shrink: 1; /* Allow the content to shrink */
-    padding: 30px; /* Add padding for spacing */
+    width: 60%; /* Set a fixed width for the content */
+    max-width: 60%; /* Ensure the content does not exceed 60% of the container */
+    padding: 20px; /* Add padding for spacing */
     background-color: #c2d7d0; /* Set background color */
     border: 1px solid #ccc; /* Add border */
     border-radius: 10px; /* Add border radius */
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Ensure the content is stacked vertically */
+    align-items: flex-start; /* Align items to the start */
     position: relative; /* Set position to relative for pseudo-element */
     box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
     margin-left: auto; /* Align the content to the right */
     margin-right: 20px; /* Increase the distance between the content and the edge of the page */
-    min-width: 60%;
     word-wrap: break-word; /* Ensure text wraps to the next line */
-    /* Ensure the content does not shrink below 60% of the container */
 }
+
 .timeline-content h3 {
-    margin-right: 20px; /* Increase the separation between the bolded part and the description */
+    margin-bottom: 10px; /* Increase the separation between the header and the date */
+}
+
+.timeline-content h4 {
+    margin-bottom: 10px; /* Add margin below the date */
+    color: rgb(52, 78, 65, 0.8); /* Change the color of the date */
 }
 
 .timeline-content p {
-    margin-right: 10px; /* Increase the separation between the bolded part and the description */
+    margin-top: 10px; /* Increase the separation between the date and the description */
 }
