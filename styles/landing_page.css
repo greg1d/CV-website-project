@@ -71,3 +71,17 @@
     50% { border-color: rgb(218, 215, 205); }
 }
 
+/* New Scroll text styles */
+.scroll-text {
+    position: absolute;
+    top: 75%; /* Position 75% down the page */
+    color: grey; /* Set text color to grey */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5em; /* Adjust font size as needed */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.scroll-text:hover {
+    color: darkgrey; /* Change color on hover */
+}
+

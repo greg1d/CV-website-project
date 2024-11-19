@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const menuLinks = document.querySelectorAll('#dynamic-menu a');
+    const menuLinks = document.querySelectorAll('#dynamic-menu a, .scroll-text');
 
     menuLinks.forEach(link => {
         link.addEventListener('click', function(event) {
