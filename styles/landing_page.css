@@ -71,7 +71,6 @@
     50% { border-color: rgb(218, 215, 205); }
 }
 
-/* New Scroll text styles */
 .scroll-text {
     position: absolute;
     top: 75%; /* Position 75% down the page */
@@ -79,6 +78,13 @@
     text-decoration: none; /* Remove underline */
     font-size: 1.5em; /* Adjust font size as needed */
     cursor: pointer; /* Change cursor to pointer */
+    display: none; /* Initially hide the scroll text */
+    transition: opacity 3s ease-in; /* Add transition for fade-in effect */
+
+}
+
+.scroll-text.visible {
+    display: block; /* Show the scroll text when the class is added */
 }
 
 .scroll-text:hover {
