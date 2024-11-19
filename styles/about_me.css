@@ -90,7 +90,6 @@
     transform: scale(1.05); /* Slightly grow the box */
     z-index: 1; /* Bring the hovered box to the front */
 }
-
 .timeline-entry:hover ~ .timeline-entry,
 .timeline-entry:hover ~ .timeline-entry ~ .timeline-entry,
 .timeline-entry:hover ~ .timeline-entry ~ .timeline-entry ~ .timeline-entry,
@@ -108,12 +107,28 @@
     opacity: 0.5; /* Fade the colors of the other timeline boxes */
 }
 
+.timeline-entry-1 .timeline-icon {
+    background-color: #124943; /* Custom background color for entry 1 */
+}
+
+.timeline-entry-2 .timeline-icon {
+    background-color: #124943; /* Custom background color for entry 2 */
+}
+
+.timeline-entry-3 .timeline-icon {
+    background-color: #124943; /* Custom background color for entry 3 */
+}
+
+.timeline-entry-4 .timeline-icon {
+    background-color: #124943; /* Custom background color for entry 4 */
+}
+
+/* Common styles for timeline icons */
 .timeline-icon {
     width: 40px; /* Fixed width for the icon */
     height: 40px; /* Fixed height for the icon */
     min-width: 40px; /* Prevent the icon from compressing */
     min-height: 40px; /* Prevent the icon from compressing */
-    background-color: #124943; /* Set background color for the icon */
     border-radius: 50%; /* Make the icon circular */
     display: flex;
     align-items: center;
@@ -123,6 +138,23 @@
     margin: 15px;
 }
 
+/* Styles for the images */
+.timeline-image {
+    display: none; /* Initially hide the images */
+    position: absolute;
+    top: 50%;
+    left: -220px; /* Position the image to the left of the timeline box */
+    transform: translateY(-50%);
+    width: 300px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 2; /* Ensure the image is on top */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
+}
+
+.timeline-entry:hover .timeline-image {
+    display: block; /* Show the image when the entry is hovered */
+}
 .timeline-content {
     width: 60%; /* Set a fixed width for the content */
     max-width: 60%; /* Ensure the content does not exceed 60% of the container */
