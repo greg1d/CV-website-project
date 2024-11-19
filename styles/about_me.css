@@ -1,0 +1,135 @@
+#about {
+    background-color: rgb(163, 177, 138); /* Updated background color for About Me section */
+    color: #333;
+    width: 100%; /* Ensure about section takes full width */
+    position: relative; /* Set the position to relative */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row; /* Change to row for side-by-side layout */
+    align-items: center; /* Align items to the center */
+    justify-content: flex-start; /* Align items to the start */
+    width: 100%; /* Ensure about-content takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Set the position to relative */
+    gap: 20px; /* Add gap between elements */
+    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+}
+
+.cartoon-image {
+    width: 30%; /* Set the width to fill the first 30% of the page */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+    align-self: center; /* Center the image vertically within the flex container */
+}
+
+.text-box {
+    width: 60%; /* Set the width to fill 60% of the container */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #c2d7d0; /* Set background color */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius */
+    display: flex;
+    align-items: center;
+    position: relative; /* Set position to relative for pseudo-element */
+    box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
+    margin-left: auto; /* Align the text box to the right */
+}
+
+.text-box::before {
+    content: '';
+    position: absolute;
+    bottom: -40px; /* Position the tail further below the text box */
+    left: 50px; /* Adjust the horizontal position of the tail */
+    width: 0;
+    height: 0;
+    border: 30px solid transparent; /* Create a longer triangular shape */
+    border-top-color: #124943; /* Match the shadow color */
+    z-index: -1; /* Position behind the text box */
+}
+
+.text-box::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; /* Position the tail further below the text box */
+    left: 40px; /* Adjust the horizontal position of the tail */
+    width: 0;
+    height: 0;
+    border: 30px solid transparent; /* Create a longer triangular shape */
+    border-top-color: #c2d7d0; /* Match the background color of the text box */
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: flex-end; /* Align the timeline to the right */
+    width: 100%; /* Ensure the container takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.timeline {
+    width: 50%; /* Compress the timeline to the right 50% of the screen */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: absolute; /* Set position to absolute */
+    margin-top: 20px; /* Add margin to the top for spacing */
+    margin-left: auto; /* Align the timeline to the right */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+}
+
+.timeline-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure timeline entry takes full width */
+    position: relative; /* Set position to relative */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+.timeline-entry:last-child {
+    margin-bottom: 0; /* Remove margin from the last entry */
+}
+
+.timeline-icon {
+    width: 40px; /* Fixed width for the icon */
+    height: 40px; /* Fixed height for the icon */
+    min-width: 40px; /* Prevent the icon from compressing */
+    min-height: 40px; /* Prevent the icon from compressing */
+    background-color: #124943; /* Set background color for the icon */
+    border-radius: 50%; /* Make the icon circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Set icon color */
+    margin-right: 20px; /* Fixed distance between the icon and the text box */
+}
+
+.timeline-content {
+    width: 60%; /* Set a fixed width for the content */
+    max-width: 60%; /* Ensure the content does not exceed 60% of the container */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #c2d7d0; /* Set background color */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius */
+    display: flex;
+    flex-direction: column; /* Ensure the content is stacked vertically */
+    align-items: flex-start; /* Align items to the start */
+    position: relative; /* Set position to relative for pseudo-element */
+    box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
+    margin-left: auto; /* Align the content to the right */
+    margin-right: 20px; /* Increase the distance between the content and the edge of the page */
+    word-wrap: break-word; /* Ensure text wraps to the next line */
+}
+
+.timeline-content h3 {
+    margin-bottom: 10px; /* Increase the separation between the header and the date */
+}
+
+.timeline-content h4 {
+    margin-bottom: 10px; /* Add margin below the date */
+    color: rgb(52, 78, 65, 0.8); /* Change the color of the date */
+}
+
+.timeline-content p {
+    margin-top: 10px; /* Increase the separation between the date and the description */
+}
