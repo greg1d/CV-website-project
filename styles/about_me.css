@@ -1,7 +1,5 @@
 #about {
-    background-color: rgb(163, 177, 138); /* Updated background color for About Me section */
-    color: #333;
-    width: 100%; /* Ensure about section takes full width */
+
     position: relative; /* Set the position to relative */
 }
 
@@ -34,40 +32,23 @@
     align-items: center;
     position: relative; /* Set position to relative for pseudo-element */
     box-shadow: 10px 10px #124943; /* Add a large shadow with color #124943 */
-    margin-left: auto; /* Align the text box to the right */
     transition: all 0.5s ease; /* Add transition for smooth movement */
 }
 
-.text-box.fixed {
+.text-box-static {
+    /* No additional styles needed for static position */
+}
+
+.text-box-scroll {
     position: fixed; /* Fix the position */
     top: 20px; /* Adjust the top position as needed */
     left: 20px; /* Move to the left side of the page */
     width: 30%; /* Adjust the width as needed */
-    margin-left: 0; /* Remove the auto margin */
 }
 
-.text-box::before {
-    content: '';
-    position: absolute;
-    bottom: -40px; /* Position the tail further below the text box */
-    left: 50px; /* Adjust the horizontal position of the tail */
-    width: 0;
-    height: 0;
-    border: 30px solid transparent; /* Create a longer triangular shape */
-    border-top-color: #124943; /* Match the shadow color */
-    z-index: -1; /* Position behind the text box */
-}
 
-.text-box::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; /* Position the tail further below the text box */
-    left: 40px; /* Adjust the horizontal position of the tail */
-    width: 0;
-    height: 0;
-    border: 30px solid transparent; /* Create a longer triangular shape */
-    border-top-color: #c2d7d0; /* Match the background color of the text box */
-}
+
+
 
 .timeline-container {
     display: flex;

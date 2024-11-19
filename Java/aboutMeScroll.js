@@ -1,17 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
     const textBox = document.querySelector('.text-box');
     const aboutSection = document.getElementById('about');
+    let isScrolled = false;
 
     window.addEventListener('scroll', function() {
         const textBoxRect = textBox.getBoundingClientRect();
-        const textBoxHeight = textBoxRect.height;
         const textBoxTop = textBoxRect.top;
-        const aboutSectionTop = aboutSection.getBoundingClientRect().top;
+        const aboutSectionRect = aboutSection.getBoundingClientRect();
 
-        if (textBoxTop <= window.innerHeight / 2 - textBoxHeight / 2) {
-            textBox.classList.add('fixed');
-        } else if (aboutSectionTop > 0) {
-            textBox.classList.remove('fixed');
+        console.log('textBoxTop:', textBoxTop);
+        console.log('About me section detected', aboutSectionRect.top);
+
+        if (textBoxTop <= window.innerHeight * 0.2 && !isScrolled) { // 80% off the screen
+            console.log('Switching to scroll position');
+            textBox.classList.add('text-box-scroll');
+            textBox.classList.remove('text-box-static');
+            isScrolled = true;
+        } else if (aboutSectionRect.top >= 0 && isScrolled) {
+            console.log('Switching to static position');
+            textBox.classList.add('text-box-static');
+            textBox.classList.remove('text-box-scroll');
+            isScrolled = false;
         }
     });
 });
