@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const initialDelay = 2000; // initial delay before starting the typing effect
 
     function getRandomSpeed() {
-        return baseSpeed + Math.random() * 100; // random speed between baseSpeed and baseSpeed + 100
+        return baseSpeed + Math.random() * 100;
     }
 
     function typeWriter() {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isDeleting) {
             if (charIndex > 0) {
                 charIndex--;
-                setTimeout(typeWriter, baseSpeed / 0.5); // Fixed speed for deleting
+                setTimeout(typeWriter, baseSpeed / 0.5);
             } else {
                 isDeleting = false;
                 index = (index + 1) % texts.length;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         textElement.innerHTML = currentText;
     }
 
-    setTimeout(typeWriter, initialDelay); // Start the typewriter effect after the initial delay
+    setTimeout(typeWriter, initialDelay);
 
     // Function to load content from an external HTML file
     function loadContent(url, elementId) {
@@ -66,21 +66,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     scrollObserver.observe(homeSection);
 
-    // Toggle the display of the text box based on the visibility of the research container
+    // Toggle the opacity of the text box based on the visibility of the research container
     const researchContainer = document.getElementById('research-container');
     const textBox = document.querySelector('.text-box-static');
 
     const toggleObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Hide the text box when the research container is in view
-                textBox.style.display = 'none';
+                // Fade out the text box when research is in view
+                textBox.style.opacity = 0;
             } else {
-                // Show the text box when the research container is not in view
-                textBox.style.display = 'block';
+                // Fade in the text box when research is not in view
+                textBox.style.opacity = 1;
             }
         });
-    }, { threshold: 0.1 }); // Adjust threshold as needed
+    }, { threshold: 0.1 });
 
     if (researchContainer) {
         toggleObserver.observe(researchContainer);
