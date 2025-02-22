@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (entry.isIntersecting) {
                 loadContent('../Pages/about_me.html', 'content');
                 loadContent('../Pages/Research.html', 'content');
+                loadContent('../Pages/Presentations.html', 'content');
+
                 scrollObserver.unobserve(entry.target);
             }
         });
