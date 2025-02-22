@@ -1,43 +1,70 @@
-  /* Research Section CSS */
-  .timeline-container+#research-container {
-      margin-top: 100px;
-  }
+/* Research Section CSS */
+.timeline-container+#research-container {
+    margin-top: 100px;
+}
 
-  .research-section {
-      width: 100%;
-      min-height: 100vh;
-      /* Each section takes up the full viewport height */
-      padding: 2em;
-      box-sizing: border-box;
-      border-bottom: 1px solid #ccc;
-  }
+.research-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2em;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    background-color: rgb(215, 215, 205);
+}
 
-  .section-header {
-      margin-bottom: 1em;
-  }
+/* Container for the tiles */
+.research-tiles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers the tiles horizontally */
+}
 
-  .section-header h2 {
-      margin: 0;
-  }
+/* Style for each individual project tile */
+.project-tile {
+    width: 90%;
+    margin: 5vh 0;
+    /* 5vh margin at top and bottom */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .section-header time {
-      display: block;
-      color: #777;
-      margin-top: 0.5em;
-  }
+.project-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .section-figure {
-      margin: 1em 0;
-      text-align: center;
-  }
+/* Existing styles for section headers and figures */
+.section-header {
+    margin-bottom: 1em;
+}
 
-  .section-figure img {
-      max-width: 100%;
-      height: auto;
-  }
+.section-header h2 {
+    margin: 0;
+}
 
-  .section-figure figcaption {
-      font-size: 0.9em;
-      color: #555;
-      margin-top: 0.5em;
-  }
+.section-header time {
+    display: block;
+    color: #777;
+    margin-top: 0.5em;
+}
+
+.section-figure {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.section-figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-figure figcaption {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 0.5em;
+}
