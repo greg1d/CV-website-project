@@ -1,4 +1,8 @@
   /* Research Section CSS */
+  .research-container {
+      margin-top: 500px;
+  }
+
   .research-section {
       width: 100%;
       min-height: 100vh;
