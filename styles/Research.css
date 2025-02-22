@@ -68,3 +68,35 @@
     color: #555;
     margin-top: 0.5em;
 }
+
+.skills-section {
+    padding: 2em 0;
+    text-align: center;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* Evenly spaces out skills */
+    align-items: center;
+    list-style-type: disc;
+    list-style-position: inside;
+    /* Ensures bullet markers display with the text */
+    margin: 0;
+    padding: 0;
+    color: #001f3f;
+    /* Dark navy text and bullet markers */
+}
+
+.skills-list li {
+    margin: 0 10px;
+    font-size: 1.2em;
+    /* Increase this value for a larger font */
+    font-weight: bold;
+}
+
+/* Optional: style the bullet marker specifically (modern browsers support ::marker) */
+.skills-list li::marker {
+    color: #001f3f;
+}
