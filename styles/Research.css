@@ -1,6 +1,6 @@
   /* Research Section CSS */
-  .research-container {
-      margin-top: 500px;
+  .timeline-container+#research-container {
+      margin-top: 100px;
   }
 
   .research-section {
