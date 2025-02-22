@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function typeWriter() {
         const textElement = document.getElementById("typing-text");
-
         currentText = texts[index].substring(0, charIndex);
-
         if (isDeleting) {
             if (charIndex > 0) {
                 charIndex--;
@@ -29,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             if (charIndex < texts[index].length) {
                 charIndex++;
-                setTimeout(typeWriter, getRandomSpeed()); // Random speed for typing
+                setTimeout(typeWriter, getRandomSpeed());
             } else {
                 isDeleting = true;
                 setTimeout(typeWriter, delay);
@@ -54,17 +52,37 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error('Error loading content:', error));
     }
 
-    // Load the About Me section when the user scrolls to the bottom of the home section
+    // Load the About Me and Research sections when the user scrolls to the bottom of the home section
     const homeSection = document.getElementById('home');
-    const observer = new IntersectionObserver((entries, observer) => {
+    const scrollObserver = new IntersectionObserver((entries, scrollObserver) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 loadContent('../Pages/about_me.html', 'content');
                 loadContent('../Pages/Research.html', 'content');
-                observer.unobserve(entry.target);
+                scrollObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
 
-    observer.observe(homeSection);
+    scrollObserver.observe(homeSection);
+
+    // Toggle the display of the text box based on the visibility of the research container
+    const researchContainer = document.getElementById('research-container');
+    const textBox = document.querySelector('.text-box-static');
+
+    const toggleObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Hide the text box when the research container is in view
+                textBox.style.display = 'none';
+            } else {
+                // Show the text box when the research container is not in view
+                textBox.style.display = 'block';
+            }
+        });
+    }, { threshold: 0.1 }); // Adjust threshold as needed
+
+    if (researchContainer) {
+        toggleObserver.observe(researchContainer);
+    }
 });
