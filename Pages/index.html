@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../styles/landing_page.css">
     <link rel="stylesheet" href="../styles/about_me.css">
     <link rel="stylesheet" href="../styles/Research.css">
-
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -36,15 +35,14 @@
         </nav>
     </header>
     <section id="home" class="section visible"
-        data-footer-color="rgb(218, 215, 205, 1), rgb(218, 215, 205, 0.5), rgb(218, 215, 205, 0))">
+        data-footer-color="rgb(218, 215, 205, 1), rgb(218, 215, 205, 0.5), rgb(218, 215, 205, 0)">
         <h2 class="centered-text">Hello, I'm Greg. I'm</h2>
         <div id="typing-container">
             <h2><span id="typing-text"></span></h2>
         </div>
-        </div>
         <!-- New Scroll text -->
         <a href="#about" class="scroll-text hidden">Scroll</a>
-        </div>
+        <a href="#Research" class="scroll-text hidden">Scroll</a>
     </section>
     <section id="about" class="section"
         data-footer-color="linear-gradient(to top, rgb(218, 215, 205, 1), rgb(218, 215, 205, 0.5), rgb(218, 215, 205, 0))">
@@ -60,12 +58,14 @@
                     at helping people do great science and gain a deeper understanding of the world. As an analytical
                     chemist, I have developed strong skills in software development, data science, and experimental
                     design. When I am not in the lab, I am either running, learning Greek, watching the Tar Heels play
-                    basketball (or baseball or football for that matter), or cooking.</p>
+                    basketball (or baseball or football, for that matter), or cooking.</p>
             </div>
         </div>
         <div id="timeline-container"></div>
     </section>
-    <script src="../Java/aboutMeScroll.js"></script>
+    <!-- Research container -->
+    <div id="research-container"></div>
+
     <footer>
         <a href="https://www.linkedin.com/in/gregorykudzin/" target="_blank">
             <i class="fab fa-linkedin"></i>
@@ -74,13 +74,15 @@
             <i class="fab fa-github"></i>
         </a>
     </footer>
+    <script src="../Java/aboutMeScroll.js"></script>
     <script src="../Java/script.js"></script>
     <script src="../Java/footerColor.js"></script>
     <script src="../Java/loadTimeline.js"></script>
     <script src="../Java/smoothScroll.js"></script>
     <script src="../Java/menuToggle.js"></script>
-    <script src="../Java/showScrollText.js"></script> <!-- New script to show scroll text -->
-
+    <script src="../Java/showScrollText.js"></script>
+    <!-- Load the external Research.html content from researchLoader.js -->
+    <script src="../Java/researchLoader.js"></script>
 </body>
 
 </html>
