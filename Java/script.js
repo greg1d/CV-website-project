@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const texts = ["an Analytical Chemist", "a Data Scientist", "a Software Developer"];
     let index = 0;
     let charIndex = 0;
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 loadContent('../Pages/about_me.html', 'content');
+                loadContent('../Pages/Research.html', 'content');
                 observer.unobserve(entry.target);
             }
         });

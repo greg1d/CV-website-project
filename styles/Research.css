@@ -1,0 +1,39 @@
+  /* Research Section CSS */
+  .research-section {
+      width: 100%;
+      min-height: 100vh;
+      /* Each section takes up the full viewport height */
+      padding: 2em;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+  }
+
+  .section-header {
+      margin-bottom: 1em;
+  }
+
+  .section-header h2 {
+      margin: 0;
+  }
+
+  .section-header time {
+      display: block;
+      color: #777;
+      margin-top: 0.5em;
+  }
+
+  .section-figure {
+      margin: 1em 0;
+      text-align: center;
+  }
+
+  .section-figure img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .section-figure figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.5em;
+  }
