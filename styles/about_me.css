@@ -48,7 +48,8 @@
 }
 
 .text-box-static {
-    /* No additional styles needed for static position */
+    transition: opacity 0.5s ease;
+    opacity: 1;
 }
 
 .text-box-scroll {
