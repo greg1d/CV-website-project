@@ -47,10 +47,35 @@
     margin: 0;
 }
 
-.section-header time {
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns left and right sections */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Ensures it wraps properly on small screens */
+    gap: 1em;
+    /* Adds spacing */
+}
+
+.research-section .pfas-trends-img {
+    max-width: 70%;
     display: block;
-    color: #777;
-    margin-top: 0.5em;
+    margin: 0 auto;
+}
+
+.header-left {
+    flex: 1;
+    /* Allows it to take up available space */
+}
+
+.header-right {
+    flex-shrink: 0;
+    /* Prevents it from shrinking */
+    font-size: 1em;
+    font-weight: bold;
+    color: #001f3f;
+    /* Dark navy */
 }
 
 .section-figure {
@@ -63,6 +88,12 @@
     height: auto;
 }
 
+.project-dates {
+    font-size: 1em;
+    color: #555;
+    text-align: right;
+}
+
 .section-figure figcaption {
     font-size: 0.9em;
     color: #555;
@@ -70,33 +101,38 @@
 }
 
 .skills-section {
-    padding: 2em 0;
+    padding: 1em 0;
     text-align: center;
 }
 
 .skills-list {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    /* Evenly spaces out skills */
-    align-items: center;
+    flex-wrap: wrap;
+    /* Allows items to wrap onto new rows if needed */
+    justify-content: center;
+    /* Centers items horizontally */
     list-style-type: disc;
+    /* Keeps bullet points */
     list-style-position: inside;
-    /* Ensures bullet markers display with the text */
-    margin: 0;
+    /* Ensures bullet points align with text */
     padding: 0;
-    color: #001f3f;
-    /* Dark navy text and bullet markers */
+    margin: 0;
+    gap: 1em;
+    /* Ensures equal spacing between list items */
 }
 
 .skills-list li {
-    margin: 0 10px;
-    font-size: 1.2em;
-    /* Increase this value for a larger font */
+    font-size: 1em;
+    /* Keeps text readable */
     font-weight: bold;
-}
-
-/* Optional: style the bullet marker specifically (modern browsers support ::marker) */
-.skills-list li::marker {
+    /* Bold text */
     color: #001f3f;
+    /* Dark navy text */
+    display: flex;
+    align-items: center;
+    /* Ensures bullets and text are aligned */
+    margin: 0 1em;
+    /* Spaces items horizontally */
+    white-space: nowrap;
+    /* Prevents text wrapping inside an item */
 }
