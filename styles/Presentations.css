@@ -66,9 +66,8 @@
 }
 
 .tile-icon {
-    width: 200px;
+    width: 80px !important;
     height: auto;
-    margin-left: 1em;
 }
 
 /* Specific styling for conference name in presentation tiles */

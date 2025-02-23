@@ -41,6 +41,7 @@
 /* Existing styles for section headers and figures */
 .section-header {
     margin-bottom: 1em;
+    color: #000;
 }
 
 .section-header h2 {
@@ -66,7 +67,12 @@
 
 .header-left {
     flex: 1;
-    /* Allows it to take up available space */
+
+}
+
+.header-left {
+    color: #000;
+    /* Sets the text color to black */
 }
 
 .header-right {
