@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 loadContent('../Pages/about_me.html', 'content');
                 loadContent('../Pages/Research.html', 'content');
                 loadContent('../Pages/Presentations.html', 'content');
-
                 scrollObserver.unobserve(entry.target);
             }
         });
@@ -73,17 +72,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const presentationsContainer = document.getElementById('presentations-container');
     const textBox = document.querySelector('.text-box-static');
 
-    // Create an IntersectionObserver that checks the visibility of the observed elements
+    // Create an IntersectionObserver with a threshold of 0.0
     const toggleObserver = new IntersectionObserver((entries) => {
-        let shouldHide = false;
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                shouldHide = true;
-            }
-        });
-        // Hide the text box if any observed element is in view, otherwise show it
+        // If any of the observed elements are intersecting, we want to hide the text box.
+        const shouldHide = entries.some(entry => entry.isIntersecting);
         textBox.style.opacity = shouldHide ? 0 : 1;
-    }, { threshold: 0.1 });
+    }, { threshold: [0, 0.3, 1] });
 
     // Observe both the research and presentations containers (if they exist)
     if (researchContainer) {
@@ -92,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (presentationsContainer) {
         toggleObserver.observe(presentationsContainer);
     }
+
 
     document.addEventListener('DOMContentLoaded', function () {
         // Load About Me content
