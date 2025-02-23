@@ -68,26 +68,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     scrollObserver.observe(homeSection);
 
-    // Toggle the opacity of the text box based on the visibility of the research container
+    // Toggle the opacity of the text box based on the visibility of the research and presentations sections
     const researchContainer = document.getElementById('research-container');
+    const presentationsContainer = document.getElementById('presentations-container');
     const textBox = document.querySelector('.text-box-static');
+
+    console.log("researchContainer:", researchContainer);
+    console.log("presentationsContainer:", presentationsContainer);
+    console.log("textBox:", textBox);
+
+    // Flags to track visibility of each section
+    let researchVisible = false;
+    let presentationsVisible = false;
 
     const toggleObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Fade out the text box when research is in view
-                textBox.style.opacity = 0;
-            } else {
-                // Fade in the text box when research is not in view
-                textBox.style.opacity = 1;
+            console.log("Observed element:", entry.target.id,
+                "isIntersecting:", entry.isIntersecting,
+                "intersectionRatio:", entry.intersectionRatio);
+            if (entry.target.id === 'research-container') {
+                researchVisible = entry.isIntersecting;
+            }
+            if (entry.target.id === 'presentations-container') {
+                presentationsVisible = entry.isIntersecting;
             }
         });
+        console.log("researchVisible:", researchVisible, "presentationsVisible:", presentationsVisible);
+        if (researchVisible || presentationsVisible) {
+            console.log("Hiding text box because research or presentations is visible");
+            textBox.style.opacity = 0;
+        } else {
+            console.log("Showing text box because neither research nor presentations is visible");
+            textBox.style.opacity = 1;
+        }
     }, { threshold: 0.1 });
 
     if (researchContainer) {
         toggleObserver.observe(researchContainer);
     }
+    if (presentationsContainer) {
+        toggleObserver.observe(presentationsContainer);
+    }
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     // Load About Me content
     fetch('Pages/about_me.html')
