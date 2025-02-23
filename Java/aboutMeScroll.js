@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('textBoxTop:', textBoxTop);
         console.log('About me section detected', aboutSectionRect.top);
 
-        if (textBoxTop <= window.innerHeight * 0.2 && !isScrolled) { // 80% off the screen
+        if (textBoxTop <= window.innerHeight * 0.01 && !isScrolled) { // 80% off the screen
             console.log('Switching to scroll position');
             textBox.classList.add('text-box-scroll');
             textBox.classList.remove('text-box-static');
