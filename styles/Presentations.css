@@ -1,0 +1,73 @@
+/* Presentations Section Styling */
+.presentation-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2em;
+    box-sizing: border-box;
+    /* Optionally, you could set a background-color here */
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+}
+
+/* Container for Presentation Tiles */
+.presentations-tiles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 2em;
+}
+
+/* Presentation Tile Styling */
+.presentation-tile {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.presentation-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Reusing Section Header and Figure styles */
+.section-header {
+    margin-bottom: 1em;
+}
+
+.section-header h2,
+.section-header h3 {
+    margin: 0;
+}
+
+.section-header time {
+    display: block;
+    color: #777;
+    margin-top: 0.5em;
+}
+
+.section-figure {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.section-figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-figure figcaption {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 0.5em;
+}
+
+/* Specific styling for conference name in presentation tiles */
+.conference-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #001f3f;
+    margin: 0.2em 0;
+}
