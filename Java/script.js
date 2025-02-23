@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 loadContent('../Pages/about_me.html', 'content');
                 loadContent('../Pages/Research.html', 'content');
                 loadContent('../Pages/Presentations.html', 'content');
+
                 scrollObserver.unobserve(entry.target);
             }
         });
@@ -67,79 +68,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
     scrollObserver.observe(homeSection);
 
-    document.addEventListener('DOMContentLoaded', function () {
-        // Get the research and presentations containers, and the text box element
-        const researchContainer = document.getElementById('research-container');
-        const presentationsContainer = document.getElementById('presentations-container');
-        const textBox = document.querySelector('.text-box-static');
+    // Toggle the opacity of the text box based on the visibility of the research container
+    const researchContainer = document.getElementById('research-container');
+    const textBox = document.querySelector('.text-box-static');
 
-        // Debug logging (remove these logs once everything works)
-        console.log("researchContainer:", researchContainer);
-        console.log("presentationsContainer:", presentationsContainer);
-        console.log("textBox:", textBox);
+    const toggleObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Fade out the text box when research is in view
+                textBox.style.opacity = 0;
+            } else {
+                // Fade in the text box when research is not in view
+                textBox.style.opacity = 1;
+            }
+        });
+    }, { threshold: 0.1 });
 
-        // Create an IntersectionObserver with a threshold of 0.0 so any visible part counts
-        const toggleObserver = new IntersectionObserver((entries) => {
-            // Log entries for debugging
-            entries.forEach(entry => {
-                console.log(`${entry.target.id} isIntersecting:`, entry.isIntersecting);
+    if (researchContainer) {
+        toggleObserver.observe(researchContainer);
+    }
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Load About Me content
+    fetch('Pages/about_me.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok for About Me');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('timeline-container').innerHTML = data;
+            // Now that the About Me content is loaded, load the Research content
+            return fetch('../Pages/Research.html');
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok for Research');
+            }
+            return response.text();
+        })
+        .then(researchData => {
+            document.getElementById('research-container').innerHTML = researchData;
+            // Optionally add the 'visible' class to sections in the research container
+            document.querySelectorAll('#research-container .section').forEach(section => {
+                section.classList.add('visible');
             });
-
-            // If any observed element is intersecting, hide the text box
-            const shouldHide = entries.some(entry => entry.isIntersecting);
-            textBox.style.opacity = shouldHide ? 0 : 1;
-        }, { threshold: 0.0 });
-
-        // Observe both containers if they exist
-        if (researchContainer) {
-            toggleObserver.observe(researchContainer);
-        }
-        if (presentationsContainer) {
-            toggleObserver.observe(presentationsContainer);
-        }
-    });
-
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Load About Me content
-        fetch('../Pages/about_me.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok for About Me');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('timeline-container').innerHTML = data;
-                // Now that the About Me content is loaded, load the Research content
-                return fetch('../Pages/Research.html');
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok for Research');
-                }
-                return response.text();
-            })
-            .then(researchData => {
-                document.getElementById('research-container').innerHTML = researchData;
-                // Optionally add the 'visible' class to sections in the research container
-                document.querySelectorAll('#research-container .section').forEach(section => {
-                    section.classList.add('visible');
-                });
-                // Now load the Presentations content
-                return fetch('../Pages/Presentations.html');
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok for Presentations');
-                }
-                return response.text();
-            })
-            .then(presentationsData => {
-                document.getElementById('presentations-container').innerHTML = presentationsData;
-            })
-            .catch(error => console.error('Error loading content:', error));
-    })
-},         // Hide the text box if either container is in view
-)
+            // Now load the Presentations content
+            return fetch('Pages/Presentations.html');
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok for Presentations');
+            }
+            return response.text();
+        })
+        .then(presentationsData => {
+            document.getElementById('presentations-container').innerHTML = presentationsData;
+        })
+        .catch(error => console.error('Error loading content:', error));
+});

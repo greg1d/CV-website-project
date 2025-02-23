@@ -1,26 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const textBox = document.querySelector('.text-box');
-    const aboutSection = document.getElementById('about');
-    let isScrolled = false;
+    const timelineEntries = document.querySelectorAll('.timeline .timeline-entry');
 
-    window.addEventListener('scroll', function() {
-        const textBoxRect = textBox.getBoundingClientRect();
-        const textBoxTop = textBoxRect.top;
-        const aboutSectionRect = aboutSection.getBoundingClientRect();
+    if (!textBox || timelineEntries.length === 0) {
+        console.error("Either text box or timeline entries not found.");
+        return;
+    }
 
-        console.log('textBoxTop:', textBoxTop);
-        console.log('About me section detected', aboutSectionRect.top);
+    window.addEventListener('scroll', function () {
+        let anyEntryVisible = false;
+        timelineEntries.forEach(entry => {
+            const rect = entry.getBoundingClientRect();
+            // Check if any part of the timeline entry is within the viewport
+            if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                anyEntryVisible = true;
+            }
+        });
 
-        if (textBoxTop <= window.innerHeight * 0.2 && !isScrolled) { // 80% off the screen
-            console.log('Switching to scroll position');
-            textBox.classList.add('text-box-scroll');
-            textBox.classList.remove('text-box-static');
-            isScrolled = true;
-        } else if (aboutSectionRect.top >= 0 && isScrolled) {
-            console.log('Switching to static position');
+        console.log("Any timeline entry visible:", anyEntryVisible);
+
+        if (anyEntryVisible) {
+            // Show the text box
             textBox.classList.add('text-box-static');
             textBox.classList.remove('text-box-scroll');
-            isScrolled = false;
+        } else {
+            // Hide the text box
+            textBox.classList.add('text-box-scroll');
+            textBox.classList.remove('text-box-static');
         }
     });
 });
