@@ -4,17 +4,19 @@
     min-height: 100vh;
     padding: 2em;
     box-sizing: border-box;
-    /* Optionally, you could set a background-color here */
-    background-color: rgb(210, 210, 205);
-    border-top: 1px solid #ccc;
+    background-color: rgb(215, 215, 205);
 }
 
 /* Container for Presentation Tiles */
 .presentations-tiles-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    /* Force three columns, each 30% of the container width */
+    grid-template-columns: repeat(3, 30%);
+    /* Use a percentage gap so that the spacing is even */
+    gap: 2%;
     margin-top: 2em;
+    /* Center the grid content if needed */
+    justify-content: space-between;
 }
 
 /* Presentation Tile Styling */
@@ -25,11 +27,28 @@
     padding: 1em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    /* For any absolute positioned elements inside */
 }
 
 .presentation-tile:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.presentation-tile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Align the logo to the top */
+    margin-bottom: 1em;
+}
+
+/* Small image styling in the top right of the header */
+.presentation-tile-header img {
+    width: 50px;
+    /* Adjust as needed */
+    height: auto;
 }
 
 /* Reusing Section Header and Figure styles */
@@ -38,9 +57,7 @@
 }
 
 .section-header h2,
-.section-header h3 {
-    margin: 0;
-}
+
 
 .section-header time {
     display: block;
@@ -48,20 +65,12 @@
     margin-top: 0.5em;
 }
 
-.section-figure {
-    margin: 1em 0;
-    text-align: center;
-}
-
-.section-figure img {
-    max-width: 100%;
+/* Logo Image Styling */
+.tile-icon {
+    width: 50px;
+    /* Adjust as needed */
     height: auto;
-}
-
-.section-figure figcaption {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 0.5em;
+    margin-left: 1em;
 }
 
 /* Specific styling for conference name in presentation tiles */
@@ -69,5 +78,10 @@
     font-size: 1.1em;
     font-weight: bold;
     color: #001f3f;
+    margin: 0.2em 0;
+}
+
+.presentation-tile-info p,
+.presentation-tile-info time {
     margin: 0.2em 0;
 }
