@@ -19,12 +19,22 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.text();
         })
         .then(researchData => {
-            // Ensure you have a container for the research page in your HTML, e.g. <div id="research-container"></div>
             document.getElementById('research-container').innerHTML = researchData;
-            // Optionally, if your research content contains .section elements, add the 'visible' class:
+            // Optionally add the 'visible' class to sections in the research container
             document.querySelectorAll('#research-container .section').forEach(section => {
                 section.classList.add('visible');
             });
+            // Now load the Presentations content
+            return fetch('../Pages/Presentations.html');
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok for Presentations');
+            }
+            return response.text();
+        })
+        .then(presentationsData => {
+            document.getElementById('presentations-container').innerHTML = presentationsData;
         })
         .catch(error => console.error('Error loading content:', error));
 });
