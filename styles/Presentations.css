@@ -65,10 +65,8 @@
     margin-top: 0.5em;
 }
 
-/* Logo Image Styling */
 .tile-icon {
-    width: 50px;
-    /* Adjust as needed */
+    width: 200px;
     height: auto;
     margin-left: 1em;
 }
