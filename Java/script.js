@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const scrollObserver = new IntersectionObserver((entries, scrollObserver) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                loadContent('../Pages/about_me.html', 'content');
-                loadContent('../Pages/Research.html', 'content');
-                loadContent('../Pages/Presentations.html', 'content');
+                loadContent('/Pages/about_me.html', 'content');
+                loadContent('/Pages/Research.html', 'content');
+                loadContent('/Pages/Presentations.html', 'content');
 
                 scrollObserver.unobserve(entry.target);
             }
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             document.getElementById('timeline-container').innerHTML = data;
             // Now that the About Me content is loaded, load the Research content
-            return fetch('../Pages/Research.html');
+            return fetch('/Pages/Research.html');
         })
         .then(response => {
             if (!response.ok) {
