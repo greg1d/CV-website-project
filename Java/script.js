@@ -67,25 +67,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
     scrollObserver.observe(homeSection);
 
-    // Get the research and presentations containers, and the text box element
-    const researchContainer = document.getElementById('research-container');
-    const presentationsContainer = document.getElementById('presentations-container');
-    const textBox = document.querySelector('.text-box-static');
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the research and presentations containers, and the text box element
+        const researchContainer = document.getElementById('research-container');
+        const presentationsContainer = document.getElementById('presentations-container');
+        const textBox = document.querySelector('.text-box-static');
 
-    // Create an IntersectionObserver with a threshold of 0.0
-    const toggleObserver = new IntersectionObserver((entries) => {
-        // If any of the observed elements are intersecting, we want to hide the text box.
-        const shouldHide = entries.some(entry => entry.isIntersecting);
-        textBox.style.opacity = shouldHide ? 0 : 1;
-    }, { threshold: [0, 0.3, 1] });
+        // Debug logging (remove these logs once everything works)
+        console.log("researchContainer:", researchContainer);
+        console.log("presentationsContainer:", presentationsContainer);
+        console.log("textBox:", textBox);
 
-    // Observe both the research and presentations containers (if they exist)
-    if (researchContainer) {
-        toggleObserver.observe(researchContainer);
-    }
-    if (presentationsContainer) {
-        toggleObserver.observe(presentationsContainer);
-    }
+        // Create an IntersectionObserver with a threshold of 0.0 so any visible part counts
+        const toggleObserver = new IntersectionObserver((entries) => {
+            // Log entries for debugging
+            entries.forEach(entry => {
+                console.log(`${entry.target.id} isIntersecting:`, entry.isIntersecting);
+            });
+
+            // If any observed element is intersecting, hide the text box
+            const shouldHide = entries.some(entry => entry.isIntersecting);
+            textBox.style.opacity = shouldHide ? 0 : 1;
+        }, { threshold: 0.0 });
+
+        // Observe both containers if they exist
+        if (researchContainer) {
+            toggleObserver.observe(researchContainer);
+        }
+        if (presentationsContainer) {
+            toggleObserver.observe(presentationsContainer);
+        }
+    });
+
 
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -128,4 +141,5 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => console.error('Error loading content:', error));
     })
-});
+},         // Hide the text box if either container is in view
+)
