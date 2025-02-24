@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Load About Me content
-    fetch('/Pages/about_me.html')
+    fetch('Pages/about_me.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok for About Me');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             document.getElementById('timeline-container').innerHTML = data;
             // Now that the About Me content is loaded, load the Research content
-            return fetch('/Pages/Research.html');
+            return fetch('Pages/Research.html');
         })
         .then(response => {
             if (!response.ok) {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 section.classList.add('visible');
             });
             // Now load the Presentations content
-            return fetch('/Pages/Presentations.html');
+            return fetch('Pages/Presentations.html');
         })
         .then(response => {
             if (!response.ok) {
